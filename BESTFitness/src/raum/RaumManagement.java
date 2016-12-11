@@ -8,21 +8,21 @@ public class RaumManagement implements Serializable, RaumDAO
     private String Pfad;
     private ArrayList<Raum> raeume;
 
-    RaumManagement(String Pfad)
+    public RaumManagement(String Pfad)
     {
         this.Pfad = Pfad;
         this.raeume = new ArrayList<Raum>();
 
         File file = new File(this.Pfad);
+        try {
+            file.getParentFile().mkdirs();
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (file.exists()) {
             this.getRaumList();
-        } else {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
