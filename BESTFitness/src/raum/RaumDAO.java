@@ -5,16 +5,17 @@ import java.util.ArrayList;
 public interface RaumDAO
 {
     /**
-     * Raum löschen
+     * Raum speichern
      * @param raum
+     * @return
      */
-    public void deleteRaum(Raum raum);
+    public void addRaum(Raum raum);
 
     /**
      * Raum durch raumNr holen
      * @return
      */
-    public Raum getByRaumNr();
+    public Raum getByRaumNr(int raumNr);
 
     /**
      * Alle räume holen
@@ -23,9 +24,13 @@ public interface RaumDAO
     public ArrayList<Raum> getRaumList();
 
     /**
-     * Raum speichern
+     * Raum löschen
      * @param raum
-     * @return
      */
-    public boolean saveRaum(Raum raum);
+    public void removeRaum(Raum raum);
+
+    /**
+     * Räume speichern
+     */
+    public void saveRaeume();
 }
