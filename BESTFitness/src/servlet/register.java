@@ -1,6 +1,7 @@
-package loginservlet;
+package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Daos.managmentuser;
+import modells.user;
 
 /**
  * Servlet implementation class register
@@ -37,9 +41,31 @@ public class register extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String action = request.getParameter("action");
+		if(action.equals("Register")){
+		String benutzertyp=request.getParameter("typ");
+		String benutzerid=request.getParameter("id");
+		String benutzervorname=request.getParameter("vorname");
+		String benutzernachname=request.getParameter("nachname");
+		String adresse=request.getParameter("addresse");
+		String pass=request.getParameter("pass");
+		
+		user u = new user(benutzertyp, Integer.parseInt(benutzerid),benutzernachname,benutzervorname,adresse, pass);
+		managmentuser managuser = new managmentuser("userFile.txt");
+		managuser.speichereuser(u);
+		
+		System.out.println("gespeicht");
+		
+		System.out.println("Madhesia e listes: "+managuser.getuserList().size());
+        request.setAttribute("erfolg", benutzerid);
 		RequestDispatcher dispa = request.getRequestDispatcher("register.jsp");
-		System.out.println("1");
 		dispa.forward(request, response);
+		}
+		else{
+			RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
+			dispa.forward(request, response);
+			
+		}
 	}
 
 }

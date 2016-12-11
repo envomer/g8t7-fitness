@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   import="login.classlogin" pageEncoding="UTF-8" %>
+   import="modells.user" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,8 +24,22 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-<h1 align="center">Willkommen : Emre </h1>
+<table>
+<tr>
+<td>
+<h1 align="center">
+<%
+user b =(user)request.getAttribute("loginseite");
 
+out.print("Wilkommen Leiter: "+b.getBenutzernachname());
+%>
+</h1>
+</td>
+<td>
+  <form action="NewFile.jsp"><input type="submit"  value="Abmelden"   name="action"  style="zoom:1.5"/> </form>
+  </td>
+  </tr>
+ </table> 
 <h3 align="left">Neues Kurs einfuegen/aendern</h3>
 
 <form action="" method="post">
@@ -37,7 +51,7 @@ tr:nth-child(even) {
         <input maxlength="50" name="kursname" size="45" type="text" />
       </td>
     </tr>
-
+  
     <tr>
       <td align="right">Datum:</td>
       <td>
@@ -79,7 +93,7 @@ tr:nth-child(even) {
         <input maxlength="50" name="kursname" size="45" value="Kurs E" type="text" />
       </td>
     </tr>
-
+  
     <tr>
       <td align="right">Datum:</td>
       <td>
@@ -116,7 +130,7 @@ tr:nth-child(even) {
 
 
 <br>
-<h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"/></h2>
+<h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"></input></h2>
 <p align='center'>
 <table width='100%' border="2" id="kurs">
 <tr>
@@ -320,7 +334,7 @@ function myFunction() {
     var x = document.getElementById('teilahme');
     if (x.style.visibility === 'hidden') {
         x.style.visibility = 'visible';
-    }
+    } 
 }
 
 </script>
@@ -331,17 +345,17 @@ function myFunctionA() {
     if (xx.style.visibility === 'visible') {
     	 xx.style.display = 'none';
         x.style.visibility = 'visible';
-
-    }
+       
+    } 
 }
 
 </script>
 <script>
 function myFunctionB() {
-
+	
     var x = document.getElementById('kurs');
     var xx = document.getElementById('kursB');
-
+  
     	 x.style.display = 'none';
         xx.style.display = 'table';
         xx.style.visibility = 'visible';
