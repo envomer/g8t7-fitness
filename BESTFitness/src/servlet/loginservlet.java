@@ -1,4 +1,4 @@
-package loginservlet;
+package servlet;
 
 import java.io.IOException;
 
@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import login.classlogin;
+import Daos.managmentuser;
+import modells.classlogin;
+
 
 /**
  * Servlet implementation class loginservlet
@@ -41,19 +43,36 @@ public class loginservlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String benutzername = request.getParameter("txt_BenutzerID");
 		String password = request.getParameter("txt_PWD");
-	System.out.println(benutzername);
-	System.out.println(password);
+		String	seite ;
+	    managmentuser managuser = new managmentuser("userFile.txt");
+	    
+	    for (int a = 0;a < managuser.getuserList().size(); a++ ){
+	    	
+	    	
+			if (managuser.getuserList().get(a).getBenutzerid() == Integer.valueOf(benutzername))
+				
+				{
+				if(managuser.getuserList().get(a).getPass().equals(password)){
+					seite = managuser.getuserList().get(a).getBenutzertyp();
+				    
+					request.setAttribute("loginseite", managuser.getuserList().get(a));
+					RequestDispatcher dispa = request.getRequestDispatcher(seite);
+					dispa.forward(request, response);
+                    
+					
+					
+				}
+				
+				}
+	    
+	    }
+	    
 		classlogin logclass = new classlogin();
 		boolean authentifikation = logclass.authentificate(benutzername, password);
 		
-	String	seite = logclass.seiteoeffnen;
-	System.out.println("Seite: "+seite);
-		if(authentifikation){
-			request.setAttribute("loginseite", logclass);
-			RequestDispatcher dispa = request.getRequestDispatcher(seite);
-			dispa.forward(request, response);
+	
 			
-		}
+	
 	}
 
 }

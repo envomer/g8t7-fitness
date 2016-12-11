@@ -5,33 +5,95 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 </head>
 <body>
-  <div class="contact-form-loader"></div>
-  <form action="registerback" method="POST" >
-                            <fieldset>
-                                <label for="txt_BenutzerID">Benutzer ID
-                                <input type="text" class="form-control" name="txt_benutzerID" required="required"  /></label>
+ <h3> Benutzer Registrierung:</h3>
+ 
+  <form action="register" method="POST" >
 
-                                <label for="txt_BenutzerID">Nachname
-                                <input type="text" class="form-control" name="txt_benutzerNachname" required="required"/></label>
-
-                                <label for="txt_benutzerVorname">Vorname
-                                <input type="text" class="form-control" name="txt_benutzerVorname" required="required"/></label>
-
-                                <label for="txt_benutzerGeburtsdatum">Geburtsdatum
-                                <input type="text" class="form-control" style="width:40px" name="txt_benutzerGeburtsdatum" value="YYYY" > - 
-                                <input type="text" class="form-control" style="width:20px" name="txt_benutzerGeburtsdatum" value="MM" > - 
-                                <input type="text" class="form-control" style="width:20px" name="txt_benutzerGeburtsdatum" value="DD" >
-                                </label>
-			
-                                <label for="txt_adresse">Adresse
-                                <input type="text" class="form-control" name="txt_adresse" required="required"/></label>
-								
-								<label for="txt_pwd">Passwort
-								<input type="password" class="form-control" name="txt_pwd" /> <br></label>
-                                <input type="submit"  value="Register" /> <br> 
-                          </fieldset>
-                          </form>
+                                <%String benid = (String)request.getAttribute("erfolg"); 
+                                if(benid!=null){
+                                	out.println("Benutzer mit id: "+benid +" wurde Erfolgreich registriert.");
+                                }  %>
+ 
+                         
+             <table id="erstellenB"    cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td align="right">Benutzer ID</td>
+      <td>
+        <input maxlength="50" name="id" size="45"  type="text" />
+      </td>
+    </tr>
+  
+    <tr>
+      <td align="right">Nachname:</td>
+      <td>
+        <input maxlength="50" name="nachname" size="45"   type="text" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Vorname:</td>
+      <td>
+        <input maxlength="50" name="vorname" size="45"  type="text" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Typ:</td>
+      <td>
+      <select name="typ" align="right" style="zoom:1.5">
+       <option value="kunde.jsp">Kunde</option>
+       <option value="trainer.jsp">Trainer</option>
+       <option value="leiter.jsp">Leiter</option>
+        <select>
+      </td>
+    </tr>
+    <tr>
+    <td align="right">Adresse:</td>
+    <td>
+      <input maxlength="50" name="addresse" size="45"   type="text" />
+    </td>
+    </tr>
+      <tr>
+    <td align="right">Kennwort:</td>
+    <td>
+      <input maxlength="50" name="pass" size="45"   type="password" />
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="submit" value="Register"  name="action"  style="zoom:1.5"/>
+         <input type="submit"  value="Zurruck"   name="action"  style="zoom:1.5"/> 
+        </form>
+  
+      </td>
+    </tr>
+  </tbody>
+</table>            
+                         
+                         
+                         
+                         
+                         
 </body>
 </html>
+                              
+                              

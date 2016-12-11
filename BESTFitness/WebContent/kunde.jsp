@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   import="login.classlogin" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="modells.user"
+     pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,6 +24,23 @@ tr:nth-child(even) {
 }
 </style>
 </head>
+<body>
+<table>
+<tr>
+<td>
+<h1 align="center">
+<%
+user b =(user)request.getAttribute("loginseite");
+
+out.print("Wilkommen Kunde: "+b.getBenutzernachname());
+%>
+</h1>
+</td>
+<td>
+  <form action="NewFile.jsp"><input type="submit"  value="Abmelden"   name="action"  style="zoom:1.5"/> </form>
+  </td>
+  </tr>
+ </table> 
 <p align='center'>
 <table width='100%' border="2">
 <tr>

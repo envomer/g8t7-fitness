@@ -1,4 +1,4 @@
-package login;
+package modells;
 
 public class kurse {
 
