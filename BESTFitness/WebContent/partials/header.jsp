@@ -4,3 +4,7 @@
     <title>BESTFitness</title>
 </head>
 <body>
+<div>
+    <nav>
+        <a href="/raum.jsp">Räume</a>
+    </nav>

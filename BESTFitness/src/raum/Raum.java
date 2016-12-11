@@ -4,6 +4,7 @@ public class Raum
 {
     private int raumNr;
     private int kapazitaet;
+    private String name;
     private boolean frei;
 
     public Raum() {}
@@ -35,5 +36,13 @@ public class Raum
 
     public void setFrei(boolean frei) {
         this.frei = frei;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
