@@ -37,7 +37,7 @@ tr:nth-child(even) {
         <input maxlength="50" name="kursname" size="45" type="text" />
       </td>
     </tr>
-  
+
     <tr>
       <td align="right">Datum:</td>
       <td>
@@ -79,7 +79,7 @@ tr:nth-child(even) {
         <input maxlength="50" name="kursname" size="45" value="Kurs E" type="text" />
       </td>
     </tr>
-  
+
     <tr>
       <td align="right">Datum:</td>
       <td>
@@ -116,7 +116,7 @@ tr:nth-child(even) {
 
 
 <br>
-<h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"></input></h2>
+<h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"/></h2>
 <p align='center'>
 <table width='100%' border="2" id="kurs">
 <tr>
@@ -320,7 +320,7 @@ function myFunction() {
     var x = document.getElementById('teilahme');
     if (x.style.visibility === 'hidden') {
         x.style.visibility = 'visible';
-    } 
+    }
 }
 
 </script>
@@ -331,17 +331,17 @@ function myFunctionA() {
     if (xx.style.visibility === 'visible') {
     	 xx.style.display = 'none';
         x.style.visibility = 'visible';
-       
-    } 
+
+    }
 }
 
 </script>
 <script>
 function myFunctionB() {
-	
+
     var x = document.getElementById('kurs');
     var xx = document.getElementById('kursB');
-  
+
     	 x.style.display = 'none';
         xx.style.display = 'table';
         xx.style.visibility = 'visible';
