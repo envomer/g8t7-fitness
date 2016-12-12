@@ -46,33 +46,24 @@ public class loginservlet extends HttpServlet {
 		String	seite ;
 	    managmentuser managuser = new managmentuser("userFile.txt");
 	    
-	    for (int a = 0;a < managuser.getuserList().size(); a++ ){
-	    	
-	    	
-			if (managuser.getuserList().get(a).getBenutzerid() == Integer.valueOf(benutzername))
-				
+	    if (benutzername != null) {
+	    	for (int a = 0;a < managuser.getuserList().size(); a++ ){
+	    		if (managuser.getuserList().get(a).getBenutzerid() == Integer.valueOf(benutzername))
 				{
-				if(managuser.getuserList().get(a).getPass().equals(password)){
-					seite = managuser.getuserList().get(a).getBenutzertyp();
-				    
-					request.setAttribute("loginseite", managuser.getuserList().get(a));
-					RequestDispatcher dispa = request.getRequestDispatcher(seite);
-					dispa.forward(request, response);
-                    
-					
+					if(managuser.getuserList().get(a).getPass().equals(password)){
+						seite = managuser.getuserList().get(a).getBenutzertyp();
+					    
+						request.setAttribute("loginseite", managuser.getuserList().get(a));
+						RequestDispatcher dispa = request.getRequestDispatcher(seite);
+						dispa.forward(request, response);
+						
+					}
 					
 				}
-				
-				}
-	    
+		    }
+	    	
+	    	classlogin logclass = new classlogin();
+			boolean authentifikation = logclass.authentificate(benutzername, password);
 	    }
-	    
-		classlogin logclass = new classlogin();
-		boolean authentifikation = logclass.authentificate(benutzername, password);
-		
-	
-			
-	
 	}
-
 }

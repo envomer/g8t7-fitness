@@ -29,9 +29,9 @@ tr:nth-child(even) {
 <td>
 <h1 align="center">
 <%
-user b =(user)request.getAttribute("loginseite");
+//user b =(user)request.getAttribute("loginseite");
 
-out.print("Wilkommen Leiter: "+b.getBenutzernachname());
+//out.print("Wilkommen Leiter: "+b.getBenutzernachname());
 %>
 </h1>
 </td>
@@ -42,7 +42,7 @@ out.print("Wilkommen Leiter: "+b.getBenutzernachname());
  </table> 
 <h3 align="left">Neues Kurs einfuegen/aendern</h3>
 
-<form action="" method="post">
+<form action="KursErstellt" method="POST">
 <table id="erstellen" border="0" cellspacing="2" cellpadding="2">
   <tbody>
     <tr>
@@ -84,7 +84,9 @@ out.print("Wilkommen Leiter: "+b.getBenutzernachname());
     </tr>
   </tbody>
 </table>
+</form>
 
+<form action="NewFile.jsp" method="POST">
 <table id="erstellenB" border="0"  style="display:none" cellspacing="2" cellpadding="2">
   <tbody>
     <tr>
