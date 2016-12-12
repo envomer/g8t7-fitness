@@ -55,13 +55,14 @@ tr:nth-child(even) {
     <tr>
       <td align="right">Datum:</td>
       <td>
-        <input maxlength="50" name="datum" size="45" type="date" />
+        <input maxlength="50" name="datum" size="45" type="date" value="01.01.2017" /> 
       </td>
+    </tr>  
     </tr>
-    <tr>
+       <tr>
       <td align="right">Time:</td>
       <td>
-        <input maxlength="50" name="time" size="45" type="time" />   bis   <input maxlength="50" name="time" size="45" type="time" />
+        <input maxlength="5" name="time" size="5" type="time" value="12:00"/>   bis   <input maxlength="5" name="time" size="5" type="time" value="13:00"/>
       </td>
     </tr>
     <tr>
@@ -101,20 +102,20 @@ tr:nth-child(even) {
         <input maxlength="50" name="kursname" size="45" value="Kurs E" type="text" />
       </td>
     </tr>
-  
     <tr>
       <td align="right">Datum:</td>
       <td>
-        <input maxlength="50" name="datum" size="45"  value="10:00-11:00" type="date" /> 
+        <input maxlength="50" name="datum" size="45" type="date" value="01.01.2017" /> 
       </td>
+    </tr>  
     </tr>
-     <tr>
+       <tr>
       <td align="right">Time:</td>
       <td>
-        <input maxlength="50" name="time" size="45" type="time" />   bis   <input maxlength="50" name="time" size="45" type="time" />
+        <input maxlength="5" name="time" size="5" type="time" value="12:00"/>   bis   <input maxlength="5" name="time" size="5" type="time" value="13:00"/>
       </td>
     </tr>
-    
+ 
     <tr>
       <td align="right">Raum:</td>
       <td>
