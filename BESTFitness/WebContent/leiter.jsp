@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Leiter</title>
 <style>
 table {
     font-family: arial, sans-serif;
@@ -55,7 +55,13 @@ tr:nth-child(even) {
     <tr>
       <td align="right">Datum:</td>
       <td>
-        <input maxlength="50" name="datum" size="45" type="text" />
+        <input maxlength="50" name="datum" size="45" type="date" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Time:</td>
+      <td>
+        <input maxlength="50" name="time" size="45" type="time" />   bis   <input maxlength="50" name="time" size="45" type="time" />
       </td>
     </tr>
     <tr>
@@ -99,9 +105,16 @@ tr:nth-child(even) {
     <tr>
       <td align="right">Datum:</td>
       <td>
-        <input maxlength="50" name="datum" size="45"  value="10:00-11:00" type="text" />
+        <input maxlength="50" name="datum" size="45"  value="10:00-11:00" type="date" /> 
       </td>
     </tr>
+     <tr>
+      <td align="right">Time:</td>
+      <td>
+        <input maxlength="50" name="time" size="45" type="time" />   bis   <input maxlength="50" name="time" size="45" type="time" />
+      </td>
+    </tr>
+    
     <tr>
       <td align="right">Raum:</td>
       <td>
@@ -149,7 +162,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs A</td>
 <td align="right">12:00-13:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">10</td>
 <td align="right">1 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -160,7 +173,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs B</td>
 <td align="right">15:00-16:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">13</td>
 <td align="right">2 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -171,7 +184,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs C</td>
 <td align="right">17:00-18:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">15</td>
 <td align="right">3 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -182,7 +195,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs D</td>
 <td align="right">19:00-20:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">10</td>
 <td align="right">4 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
@@ -193,7 +206,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs E</td>
 <td align="right">10:00-11:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">5</td>
 <td align="right">5 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
@@ -217,7 +230,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs A</td>
 <td align="right">12:00-13:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">10</td>
 <td align="right">1 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -228,7 +241,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs B</td>
 <td align="right">15:00-16:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">13</td>
 <td align="right">2 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -239,7 +252,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs C</td>
 <td align="right">17:00-18:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">15</td>
 <td align="right">3 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -251,7 +264,7 @@ tr:nth-child(even) {
 <tr>
 <td align="right">Kurs E</td>
 <td align="right">10:00-11:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right">5</td>
 <td align="right">5 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
@@ -275,8 +288,8 @@ Teilnehmer der Kurs:
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">GLEDION</td>
-<td align="right">GLEDION</td>
+<td align="right">Yunus</td>
+<td align="right">Yunus</td>
 
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
@@ -311,8 +324,8 @@ Teilnehmer der Kurs:
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">GLEDION</td>
-<td align="right">GLEDION</td>
+<td align="right">Yunus</td>
+<td align="right">Yunus</td>
 
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>

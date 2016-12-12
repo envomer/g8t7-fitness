@@ -54,15 +54,15 @@ out.print("Wilkommen Kunde: "+b.getBenutzernachname());
 <td align="right">Kurs 1</td>
 <td align="right">SONTAG 12/10/2016 </td>
 <td align="right">12:00-13:00</td>
-<td align="right">Gledi</td>
+<td align="right">Yunus</td>
 <td align="right"><form><input type=submit value="Anmelden" style="width:100%"></form></td>
 </tr>
 <tr>
 <td align="right">Kurs 2</td>
 <td align="right">MONTAG 13/10/2016 </td>
 <td align="right">15:00-16:00</td>
-<td align="right">Gledi</td>
-<td align="right"><form><input type=submit value="Anmelden" style="font-size : 40px; width: 100%; height: 100px;" ></form></td>
+<td align="right">Gerhard</td>
+<td align="right"><form><input type=submit value="Anmelden" style="width: 100%" ></form></td>
 </tr>
 </table>
 </p>
