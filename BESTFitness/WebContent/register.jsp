@@ -39,7 +39,7 @@ tr:nth-child(even) {
     <tr>
       <td align="right">Benutzer ID</td>
       <td>
-        <input maxlength="50" name="id" size="45"  type="text" />
+        <input maxlength="50" name="id" size="45"  type="number" />
       </td>
     </tr>
   
@@ -88,9 +88,9 @@ tr:nth-child(even) {
     </tr>
   </tbody>
 </table>            
-                         
-                         
-                         
+             <%String ant = (String)request.getAttribute("geloeschteid"); if(ant!=null)out.println(ant); %>            
+  <h5> Id  <input maxlength="50" name="idloesch" size="10"   type="text" />                          
+                        <input type="submit"  value="Loeschen"   name="action"  style="zoom:1.5"/>  
                          
                          
 </body>

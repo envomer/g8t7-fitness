@@ -11,6 +11,8 @@ public class Kurs implements Serializable {
 	private int kursID;
 	private String kursName;
 	private Date datum;
+	private String uhrVon;
+	private String uhrBis;
 	private String raum;
 	private String trainer;
 	private int teilnehmerAnzahl;
@@ -21,10 +23,12 @@ public class Kurs implements Serializable {
 	 * @param kursID id des Kurses
 	 * @param teilnehmerAnzahl maximale TeilnehmerAnzahl
 	 */
-	public Kurs(int kursID, String kursName, Date datum, String raum, String trainer, int teilnehmerAnzahl){
+	public Kurs(int kursID, String kursName, Date datum, String uhrVon, String uhrBis, String raum, String trainer, int teilnehmerAnzahl){
 		setKursID(kursID);
 		setKursName(kursName);
 		setKursDatum(datum);
+		setKursUhrVon(uhrVon);
+		setKursUhrBis(uhrBis);
 		setKursRaum(raum);
 		setKursTrainer(trainer);
 		setTeilnehmerAnzahl(teilnehmerAnzahl);
@@ -101,6 +105,22 @@ public class Kurs implements Serializable {
 
 	public void setKursTrainer(String trainer) {
 		this.trainer = trainer;
+	}
+
+	public String getKursUhrVon() {
+		return uhrVon;
+	}
+
+	public void setKursUhrVon(String uhrVon) {
+		this.uhrVon = uhrVon;
+	}
+
+	public String getKursUhrBis() {
+		return uhrBis;
+	}
+
+	public void setKursUhrBis(String uhrBis) {
+		this.uhrBis = uhrBis;
 	}	
 					
 }

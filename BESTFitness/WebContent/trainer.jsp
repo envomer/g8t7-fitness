@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Leiter</title>
 <style>
-
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -30,9 +29,9 @@ tr:nth-child(even) {
 <td>
 <h1 align="center">
 <%
-user b =(user)request.getAttribute("loginseite");
+//user b =(user)request.getAttribute("loginseite");
 
-out.print("Wilkommen Trainer: "+b.getBenutzernachname());
+//out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 %>
 </h1>
 </td>
@@ -41,31 +40,250 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
   </td>
   </tr>
  </table> 
+<br>
+<h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"></input></h2>
 <p align='center'>
-<table width='100%' border="2">
+<table width='100%' border="2" id="kurs">
 <tr>
-<th>Kurs nr</th>
-<th>Tag </th>
+
+<th>Kurs Name </th>
 <th>Uhrzeit </th>
-<th>Trainer </th>
-<th>Anmeldung </th>
+<th>Trainer name</th>
+<th>Anzahl der teilnehmer </th>
+<th>Raum Nr</th>
+<th>Anzeigen </th>
+<th>Loeschen</th>
 </tr>
 <tr>
-<td align="right">Kurs 1</td>
-<td align="right">SONTAG 12/10/2016 </td>
+<td align="right">Aerobic</td>
 <td align="right">12:00-13:00</td>
-<td align="right">Yunus</td>
-<td align="right"><form><input type=submit value="Absagen" style="width:100%"></form></td>
+<td align="right">Trainer</td>
+<td align="right">10</td>
+<td align="right">1 </td>
+<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+
 </tr>
 <tr>
-<td align="right">Kurs 2</td>
-<td align="right">MONTAG 13/10/2016 </td>
+<td align="right">Badminton</td>
 <td align="right">15:00-16:00</td>
-<td align="right">Gerhard</td>
-<td align="right"><form><input type=submit value="Absagen"  style="width:100%" ></form></td>
+<td align="right">Trainer</td>
+<td align="right">13</td>
+<td align="right">2 </td>
+<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+
+</tr>
+<tr>
+<td align="right">Hockey</td>
+<td align="right">17:00-18:00</td>
+<td align="right">Trainer</td>
+<td align="right">15</td>
+<td align="right">3 </td>
+<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+
+</tr>
+<tr>
+<td align="right">Karate</td>
+<td align="right">19:00-20:00</td>
+<td align="right">Trainer</td>
+<td align="right">10</td>
+<td align="right">4 </td>
+<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
+<td align="right"><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
+
+</tr>
+<tr>
+<td align="right">Hapkido</td>
+<td align="right">10:00-11:00</td>
+<td align="right">Trainer</td>
+<td align="right">5</td>
+<td align="right">5 </td>
+<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 </table>
-</p>
+
+<table width='100%' id="kursB" style=" display:none; visibility:hidden" border="2">
+<tr>
+
+<th>Kurs Name </th>
+<th>Uhrzeit </th>
+<th>Trainer name</th>
+<th>Anzahl der teilnehmer </th>
+<th>Raum Nr</th>
+<th>Anzeigen </th>
+
+<th>Loeschen</th>
+</tr>
+<tr>
+<td align="right">Aerobic</td>
+<td align="right">12:00-13:00</td>
+<td align="right">Trainer</td>
+<td align="right">10</td>
+<td align="right">1 </td>
+<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+
+</tr>
+<tr>
+<td align="right">Badminton</td>
+<td align="right">15:00-16:00</td>
+<td align="right">Trainer</td>
+<td align="right">13</td>
+<td align="right">2 </td>
+<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+
+</tr>
+<tr>
+<td align="right">Hockey</td>
+<td align="right">17:00-18:00</td>
+<td align="right">Trainer</td>
+<td align="right">15</td>
+<td align="right">3 </td>
+<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+
+</tr>
+<tr>
+<td align="right">Karate</td>
+<td align="right">19:00-20:00</td>
+<td align="right">Trainer</td>
+<td align="right">10</td>
+<td align="right">4 </td>
+<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
+<td align="right"><h5>Kurs abgesagt</h5></td>
+
+</tr>
+<tr>
+<td align="right">Hapkido</td>
+<td align="right">10:00-11:00</td>
+<td align="right">Trainer</td>
+<td align="right">5</td>
+<td align="right">5 </td>
+<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
+<td align="right"><form><input type=submit value="Absagen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+</table>
+
+Teilnehmer der Kurs:
+<table width='100%' border="2" id="teilahme" style="visibility:hidden">
+<tr>
+
+<th>Vorname</th>
+<th>Nachname </th>
+
+<th>Abmelden </th>
+</tr>
+<tr>
+<td align="right">Senan</td>
+<td align="right">Ahmadzada</td>
+<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+<tr>
+<td align="right">Yunus Emre</td>
+<td align="right">Kanitoglu</td>
+
+<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+<tr>
+<td align="right">Omer</td>
+<td align="right">Mohamed Ali</td>
+
+<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+<tr>
+<td align="right">Rabit</td>
+<td align="right">Ljatifi</td>
+<td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionA()"></td>
+</tr>
+<tr>
+<td align="right">Max</td>
+<td align="right">Musterman</td>
+
+<td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
+</tr>
+</table>
+<table width='100%' border="2" id="teilahmeA" style="visibility:hidden">
+<tr>
+<th>Vorname</th>
+<th>Nachname </th>
+
+<th>Abmelden </th>
+</tr>
+<tr>
+<td align="right">Senan</td>
+<td align="right">Ahmadzada</td>
+<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+<tr>
+<td align="right">Yunus Emre</td>
+<td align="right">Kanitoglu</td>
+
+<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+<tr>
+<td align="right">Omer</td>
+<td align="right">Mohamed Ali</td>
+
+<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+</tr>
+
+<tr>
+<td align="right">Max</td>
+<td align="right">Musterman</td>
+
+<td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
+</tr>
+</table>
+
+<script>
+function myFunction() {
+    var x = document.getElementById('teilahme');
+    if (x.style.visibility === 'hidden') {
+        x.style.visibility = 'visible';
+    } 
+}
+
+</script>
+<script>
+function myFunctionA() {
+    var x = document.getElementById('teilahmeA');
+    var xx = document.getElementById('teilahme');
+    if (xx.style.visibility === 'visible') {
+    	 xx.style.display = 'none';
+        x.style.visibility = 'visible';
+       
+    } 
+}
+
+</script>
+<script>
+function myFunctionB() {
+	
+    var x = document.getElementById('kurs');
+    var xx = document.getElementById('kursB');
+  
+    	 x.style.display = 'none';
+        xx.style.display = 'table';
+        xx.style.visibility = 'visible';
+
+}
+
+</script>
+<script>
+function myFunctionC() {
+     var x = document.getElementById('erstellen');
+    var xx = document.getElementById('erstellenB');
+          x.style.display = 'none';
+        xx.style.display = 'table';
+        xx.style.visibility = 'visible';
+
+}
+
+</script>
 </body>
 </html>
 

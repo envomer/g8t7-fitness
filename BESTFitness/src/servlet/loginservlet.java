@@ -44,15 +44,17 @@ public class loginservlet extends HttpServlet {
 		String benutzername = request.getParameter("txt_BenutzerID");
 		String password = request.getParameter("txt_PWD");
 		String	seite ;
-	    managmentuser managuser = new managmentuser("userFile.txt");
-	    
+	    managmentuser managuser = new managmentuser("DBuser.txt");
+	    boolean check  = false;
 	    if (benutzername != null) {
 	    	for (int a = 0;a < managuser.getuserList().size(); a++ ){
+	    	
 	    		if (managuser.getuserList().get(a).getBenutzerid() == Integer.valueOf(benutzername))
 				{
 					if(managuser.getuserList().get(a).getPass().equals(password)){
+						
 						seite = managuser.getuserList().get(a).getBenutzertyp();
-					    
+					    check = true;
 						request.setAttribute("loginseite", managuser.getuserList().get(a));
 						RequestDispatcher dispa = request.getRequestDispatcher(seite);
 						dispa.forward(request, response);
@@ -61,9 +63,12 @@ public class loginservlet extends HttpServlet {
 					
 				}
 		    }
+	    	 if(check==false){
+	    		 request.setAttribute("loginseite", "Falsche Benutzerid oder Kennwort");
+	    	RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
+			dispa.forward(request, response);}
 	    	
-	    	classlogin logclass = new classlogin();
-			boolean authentifikation = logclass.authentificate(benutzername, password);
+	    
 	    }
 	}
 }

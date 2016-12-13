@@ -41,6 +41,8 @@ public class register extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		
 		String action = request.getParameter("action");
 		if(action.equals("Register")){
 		String benutzertyp=request.getParameter("typ");
@@ -51,21 +53,41 @@ public class register extends HttpServlet {
 		String pass=request.getParameter("pass");
 		
 		user u = new user(benutzertyp, Integer.parseInt(benutzerid),benutzernachname,benutzervorname,adresse, pass);
-		managmentuser managuser = new managmentuser("userFile.txt");
+		managmentuser managuser = new managmentuser("DBuser.txt");
 		managuser.speichereuser(u);
 		
 		System.out.println("gespeicht");
 		
-		System.out.println("Madhesia e listes: "+managuser.getuserList().size());
+		System.out.println("Size: "+managuser.getuserList().size());
         request.setAttribute("erfolg", benutzerid);
 		RequestDispatcher dispa = request.getRequestDispatcher("register.jsp");
 		dispa.forward(request, response);
+		}
+		else if(action.equals("Loeschen")){
+			
+			String benutzerid=request.getParameter("idloesch");
+			
+			managmentuser managuser = new managmentuser("DBuser.txt");
+			for (int a = 0;a < managuser.userListe.size(); a++ )
+				if (managuser.userListe.get(a).getBenutzerid() == Integer.valueOf(benutzerid)){
+					managuser.loescheuser(managuser.userListe.get(a));
+			request.setAttribute("geloeschteid", "id: "+benutzerid+ " wurde erfolgreich geloescht" );}
+				else{
+				request.setAttribute("geloeschteid", "id: "+benutzerid+ " existiert nicht" );
+				
+			} 
+		
+			RequestDispatcher dispa = request.getRequestDispatcher("register.jsp");
+			dispa.forward(request, response);
+			
 		}
 		else{
 			RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
 			dispa.forward(request, response);
 			
 		}
+		
+		
 	}
 
 }

@@ -44,6 +44,15 @@ public class KursErstellt extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @param name die Name des Kurses
+	 * @param datum das Datum des Kurses
+	 * @param uhrVon der Beginn des Kurses
+	 * @param uhrBis der Ende des Kurses
+	 * @param raum die Raum Nummer des Kurses
+	 * @param trainer der Trainer des Kurses
+	 * @param maxKap maximale Teilnehmer Anzahl des Kurses
+	 *            Kurs erstellt und in die Liste gespeichert
+	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -59,12 +68,13 @@ public class KursErstellt extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
+	    String uhrVon = request.getParameter("timevon");
+	    String uhrBis = request.getParameter("timebis");
 		String raum = request.getParameter("raum");
 		String trainer = request.getParameter("trainer");
 		int maxKap = Integer.parseInt(request.getParameter("teilnameanzahl"));
 		
-		Kurs neuerKurs = new Kurs(1, name, date, raum, trainer, maxKap);	
+		Kurs neuerKurs = new Kurs(1, name, date, uhrVon, uhrBis, raum, trainer, maxKap);	
 		KursManagement km = new KursManagement("kurs.txt");
 		km.speicherKurs(neuerKurs);
 		

@@ -28,7 +28,7 @@ div.transbox p {
 	<table align="right" > 
 		<tr align="right">
 			<td align="right"><b>Benutzer Id: </b></td>
-    		<td><input type="text" placeholder="Enter Benutzername" name="txt_BenutzerID" required></td>
+    		<td><input type="number" placeholder="Enter Benutzername" name="txt_BenutzerID" required></td>
     		<td><input type="submit" value="Anmelden"/></td>	
 		</tr>
 		<tr>
@@ -36,8 +36,14 @@ div.transbox p {
     		<td><input type="password" placeholder="Enter Password" name="txt_PWD" required></td>
  			<td></form><form action="register.jsp"><input type="submit" value="Registrieren"/></form></td>
 		</tr>
+		<tr>
+    		
+
+ 			<td colspan="3"><b> <%String ant = (String)request.getAttribute("loginseite"); if(ant!=null)out.println(ant); %></b></td>
+		</tr>
+		
 </table>
-<h1>BESTFitnes</h1>
+<h1>BESTFitness</h1>
 
 </body>
 </html>
