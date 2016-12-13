@@ -51,12 +51,12 @@ public class register extends HttpServlet {
 		String pass=request.getParameter("pass");
 		
 		user u = new user(benutzertyp, Integer.parseInt(benutzerid),benutzernachname,benutzervorname,adresse, pass);
-		managmentuser managuser = new managmentuser("userFile.txt");
+		managmentuser managuser = new managmentuser("DBuser.txt");
 		managuser.speichereuser(u);
 		
 		System.out.println("gespeicht");
 		
-		System.out.println("Madhesia e listes: "+managuser.getuserList().size());
+		System.out.println("Size: "+managuser.getuserList().size());
         request.setAttribute("erfolg", benutzerid);
 		RequestDispatcher dispa = request.getRequestDispatcher("register.jsp");
 		dispa.forward(request, response);
