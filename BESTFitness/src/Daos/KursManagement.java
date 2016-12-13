@@ -16,7 +16,9 @@ public class KursManagement implements KursDao{
 
 	private String pfad;
     private ArrayList<Kurs> kurse;
-	
+    /**
+	 * @param pfad Datei wo die Objekte gespeichert werden soll
+	 */
     public KursManagement(String pfad) {
     	this.pfad = pfad;
         this.kurse = new ArrayList<Kurs>();

@@ -29,9 +29,9 @@ tr:nth-child(even) {
 <td>
 <h1 align="center">
 <%
-user b =(user)request.getAttribute("loginseite");
+//user b =(user)request.getAttribute("loginseite");
 
-out.print("Wilkommen Trainer: "+b.getBenutzernachname());
+//out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 %>
 </h1>
 </td>
@@ -55,9 +55,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 <th>Loeschen</th>
 </tr>
 <tr>
-<td align="right">Kurs A</td>
+<td align="right">Aerobic</td>
 <td align="right">12:00-13:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">1 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -65,9 +65,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs B</td>
+<td align="right">Badminton</td>
 <td align="right">15:00-16:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">13</td>
 <td align="right">2 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -75,9 +75,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs C</td>
+<td align="right">Hockey</td>
 <td align="right">17:00-18:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">15</td>
 <td align="right">3 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -85,9 +85,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs D</td>
+<td align="right">Karate</td>
 <td align="right">19:00-20:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">4 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
@@ -95,9 +95,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs E</td>
+<td align="right">Hapkido</td>
 <td align="right">10:00-11:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">5</td>
 <td align="right">5 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
@@ -118,9 +118,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 <th>Loeschen</th>
 </tr>
 <tr>
-<td align="right">Kurs A</td>
+<td align="right">Aerobic</td>
 <td align="right">12:00-13:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">1 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -128,9 +128,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs B</td>
+<td align="right">Badminton</td>
 <td align="right">15:00-16:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">13</td>
 <td align="right">2 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -138,9 +138,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs C</td>
+<td align="right">Hockey</td>
 <td align="right">17:00-18:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">15</td>
 <td align="right">3 </td>
 <td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
@@ -148,9 +148,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs D</td>
+<td align="right">Karate</td>
 <td align="right">19:00-20:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">4 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
@@ -158,9 +158,9 @@ out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 
 </tr>
 <tr>
-<td align="right">Kurs E</td>
+<td align="right">Hapkido</td>
 <td align="right">10:00-11:00</td>
-<td align="right">Yunus</td>
+<td align="right">Trainer</td>
 <td align="right">5</td>
 <td align="right">5 </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
@@ -179,29 +179,29 @@ Teilnehmer der Kurs:
 </tr>
 <tr>
 <td align="right">Senan</td>
-<td align="right">SENAN</td>
+<td align="right">Ahmadzada</td>
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">Yunus</td>
-<td align="right">Yunus</td>
+<td align="right">Yunus Emre</td>
+<td align="right">Kanitoglu</td>
 
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">ABC</td>
-<td align="right">CDF</td>
+<td align="right">Omer</td>
+<td align="right">Mohamed Ali</td>
 
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">DFW</td>
-<td align="right">FDW</td>
+<td align="right">Rabit</td>
+<td align="right">Ljatifi</td>
 <td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionA()"></td>
 </tr>
 <tr>
-<td align="right">ADMIN</td>
-<td align="right">ADMIN</td>
+<td align="right">Max</td>
+<td align="right">Musterman</td>
 
 <td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
 </tr>
@@ -215,25 +215,25 @@ Teilnehmer der Kurs:
 </tr>
 <tr>
 <td align="right">Senan</td>
-<td align="right">SENAN</td>
+<td align="right">Ahmadzada</td>
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">Yunus</td>
-<td align="right">Yunus</td>
+<td align="right">Yunus Emre</td>
+<td align="right">Kanitoglu</td>
 
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 <tr>
-<td align="right">ABC</td>
-<td align="right">CDF</td>
+<td align="right">Omer</td>
+<td align="right">Mohamed Ali</td>
 
 <td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 </tr>
 
 <tr>
-<td align="right">ADMIN</td>
-<td align="right">ADMIN</td>
+<td align="right">Max</td>
+<td align="right">Musterman</td>
 
 <td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
 </tr>

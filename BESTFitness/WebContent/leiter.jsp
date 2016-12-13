@@ -34,7 +34,6 @@ tr:nth-child(even) {
 <h1 align="center">
 <%
 //user b =(user)request.getAttribute("loginseite");
-
 //out.print("Wilkommen Leiter: "+b.getBenutzernachname());
 %>
 </h1>
@@ -180,7 +179,7 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right"> <%= uhrzeit %> </td>
 <td align="right"> <%= kurse.get(i).getKursTrainer() %> </td>
 <td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %> </td>
-<td align="right"> <%= kurse.get(i).getKursID() %> </td>
+<td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
 <td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 <td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
@@ -267,7 +266,8 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 <td align="right"> <%= uhrzeit %> </td>
 <td align="right"> <%= kurse.get(i).getKursTrainer() %> </td>
 <td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %> </td>
-<td align="right"> <%= kurse.get(i).getKursID() %> </td>
+<td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
+
 <td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
 <td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
 <td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
