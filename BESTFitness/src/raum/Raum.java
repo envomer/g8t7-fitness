@@ -1,6 +1,8 @@
 package raum;
 
-public class Raum
+import java.io.Serializable;
+
+public class Raum implements Serializable
 {
     private int raumNr;
     private int kapazitaet;
@@ -9,9 +11,10 @@ public class Raum
 
     public Raum() {}
 
-    public Raum(int raumNr, int kapazitaet) {
+    public Raum(int raumNr, String name, int kapazitaet) {
         this.raumNr = raumNr;
         this.kapazitaet = kapazitaet;
+        this.name = name;
     }
 
     public int getRaumNr() {

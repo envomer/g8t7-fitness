@@ -13,24 +13,28 @@ import java.io.IOException;
 public class raumservlet extends HttpServlet
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RaumManagement raeume = new RaumManagement("raeume.txt");
-        System.out.println("getting raeume....");
+        RaumManagement raeume = new RaumManagement();
+        System.out.println("getting raeume...." + raeume.getRaumList().size());
 
-        request.getRequestDispatcher("raum.jsp").include(request, response);
-        response.setContentType("text/html");
         request.setAttribute("raeume", raeume.getRaumList());
+
+        response.setContentType("text/html");
+        request.getRequestDispatcher("raum.jsp").include(request, response);
     }
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("saving raeume");
 
+        int raumnr = Integer.parseInt(request.getParameter("raumnr"));
         String name = request.getParameter("name");
+        int kapazitaet = Integer.parseInt(request.getParameter("kapazitaet"));
 
-        Raum raum = new Raum();
-        raum.setName(name);
+        if( name == "" ) name = "N/A";
 
-        RaumManagement raeume = new RaumManagement("raeume.txt");
+        Raum raum = new Raum(raumnr, name, kapazitaet);
+
+        RaumManagement raeume = new RaumManagement();
         raeume.addRaum(raum);
 
         response.sendRedirect("/raum");

@@ -3,26 +3,25 @@ package raum;
 import java.io.*;
 import java.util.ArrayList;
 
-public class RaumManagement implements Serializable, RaumDAO
+public class RaumManagement implements RaumDAO
 {
     private String Pfad;
     private ArrayList<Raum> raeume;
 
-    public RaumManagement(String Pfad)
+    public RaumManagement()
     {
-        this.Pfad = Pfad;
+        this.Pfad = "raum.txt";
         this.raeume = new ArrayList<Raum>();
 
         File file = new File(this.Pfad);
-        try {
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         if (file.exists()) {
-            this.getRaumList();
+            this.loadList();
+        } else {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -90,6 +89,19 @@ public class RaumManagement implements Serializable, RaumDAO
             oos.close();
             fos.close();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadList()
+    {
+        try {
+            FileInputStream fis = new FileInputStream(this.Pfad);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.raeume = (ArrayList<Raum>) ois.readObject();
+            ois.close();
+            fis.close();
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

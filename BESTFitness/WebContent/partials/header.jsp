@@ -6,5 +6,5 @@
 <body>
 <div>
     <nav>
-        <a href="/raum.jsp">Räume</a>
+        <a href="/raum">Räume</a>
     </nav>
