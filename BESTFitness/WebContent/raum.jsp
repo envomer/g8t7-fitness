@@ -2,7 +2,7 @@
 <%@ page import="raum.Raum" %>
 <jsp:include page="partials/header.jsp" />
 
-<h1>Raum verwaltung.</h1>
+<h1>Raum verwaltung</h1>
 
 <div class="form-container">
     <form action="/raum" method="POST" class="form">
@@ -24,6 +24,12 @@
     </form>
 </div>
 
+<%
+    ArrayList<Raum> raeume = (ArrayList<Raum>) request.getAttribute("raeume");
+    int anzahl = raeume.size();
+    out.print("Anzahl:" + anzahl);
+    if( anzahl > 0 ) {
+%>
 <table>
     <thead>
         <tr>
@@ -34,10 +40,6 @@
     </thead>
     <tbody>
     <%
-        ArrayList<Raum> raeume = (ArrayList<Raum>) request.getAttribute("raeume");
-        int anzahl = raeume.size();
-        out.print("Anzahl:" + anzahl);
-
         for(Raum raum : raeume) {
             out.print("<tr>");
             out.print("<td>" + raum.getRaumNr() + "</td>");
@@ -48,6 +50,6 @@
     %>
     </tbody>
 </table>
-
+<% } %>
 </body>
 </html>

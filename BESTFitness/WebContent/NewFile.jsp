@@ -1,35 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<style>
-div.transbox {
- 	width: 400px;
-    height: 220px;
-    margin: 30px;
-    background-color: #ffffff;
-    border: 1px solid black;
-    opacity: 0.6;
-    filter: alpha(opacity=60); /* For IE8 and earlier */
-}
-div.background {
-    background: url(klematis.jpg) repeat;
-    border: 2px solid black;
-}
-div.transbox p {
-    margin: 5%;
-    font-weight: bold;
-    color: #000000;
-}
-</style>
-<body>
-
+<jsp:include page="partials/header.jsp" />
 <form action="loginservlet" method ="POST">
-	<table align="right" > 
+	<table align="center" >
 		<tr align="right">
 			<td align="right"><b>Benutzer Id: </b></td>
     		<td><input type="number" placeholder="Enter Benutzername" name="txt_BenutzerID" required></td>
-    		<td><input type="submit" value="Anmelden"/></td>	
+    		<td><input type="submit" value="Anmelden"/></td>
 		</tr>
 		<tr>
     		<td><b>Password</b></td>
@@ -37,13 +12,10 @@ div.transbox p {
  			<td></form><form action="register.jsp"><input type="submit" value="Registrieren"/></form></td>
 		</tr>
 		<tr>
-    		
+
 
  			<td colspan="3"><b> <%String ant = (String)request.getAttribute("loginseite"); if(ant!=null)out.println(ant); %></b></td>
 		</tr>
-		
-</table>
-<h1>BESTFitness</h1>
 
-</body>
-</html>
+</table>
+<jsp:include page="partials/footer.jsp" />

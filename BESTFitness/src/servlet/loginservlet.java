@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Daos.managmentuser;
 import modells.classlogin;
@@ -52,23 +53,26 @@ public class loginservlet extends HttpServlet {
 	    		if (managuser.getuserList().get(a).getBenutzerid() == Integer.valueOf(benutzername))
 				{
 					if(managuser.getuserList().get(a).getPass().equals(password)){
-						
-						seite = managuser.getuserList().get(a).getBenutzertyp();
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", managuser.getuserList().get(a));
+
+                        response.sendRedirect("/");
+
+//						seite = managuser.getuserList().get(a).getBenutzertyp();
 					    check = true;
-						request.setAttribute("loginseite", managuser.getuserList().get(a));
-						RequestDispatcher dispa = request.getRequestDispatcher(seite);
-						dispa.forward(request, response);
+//						request.setAttribute("loginseite", managuser.getuserList().get(a));
+//						RequestDispatcher dispa = request.getRequestDispatcher(seite);
+//						dispa.forward(request, response);
 						
 					}
 					
 				}
 		    }
 	    	 if(check==false){
-	    		 request.setAttribute("loginseite", "Falsche Benutzerid oder Kennwort");
-	    	RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
-			dispa.forward(request, response);}
-	    	
-	    
+                 request.setAttribute("loginseite", "Falsche Benutzerid oder Kennwort");
+                 RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
+                 dispa.forward(request, response);
+	    	 }
 	    }
 	}
 }

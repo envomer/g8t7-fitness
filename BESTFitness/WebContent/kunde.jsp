@@ -30,9 +30,10 @@ tr:nth-child(even) {
 <td>
 <h1 align="center">
 <%
-user b =(user)request.getAttribute("loginseite");
-
-out.print("Wilkommen Kunde: "+b.getBenutzernachname());
+user b = (user)request.getAttribute("loginseite");
+if( b != null ) {
+    out.print("Wilkommen Kunde: "+b.getBenutzernachname());
+}
 %>
 </h1>
 </td>
