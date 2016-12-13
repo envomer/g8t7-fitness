@@ -70,7 +70,7 @@ out.print("Wilkommen Kunde: "+b.getBenutzernachname());
 </p>
 
 <p align='center'>
-<table width='100%' border="2"  id="table2" style="visibility:hidden">
+<table width='100%' border="2"  id="table2" style="visibility:hidden;display:none;">
 <tr>
 <th>Kurs nr</th>
 <th>Tag </th>
@@ -94,6 +94,26 @@ out.print("Wilkommen Kunde: "+b.getBenutzernachname());
 </tr>
 </table>
 </p>
+Suche: <input type="text" placeholder="Kurse Suchen"> <input type=submit value="Suchen" onclick="myFunctionC()" >
+<p align='center'>
+<table width='100%' border="2"  id="table3" style="visibility:hidden; display:none;">
+<tr>
+<th>Kurs nr</th>
+<th>Tag </th>
+<th>Uhrzeit </th>
+<th>Trainer </th>
+
+</tr>
+
+<tr>
+<td align="right">Kurs 2</td>
+<td align="right">MONTAG 13/10/2016 </td>
+<td align="right">15:00-16:00</td>
+<td align="right">Gerhard</td>
+</tr>
+</table>
+</p>
+
 
 <script>
 function myFunctionA() {
@@ -108,7 +128,6 @@ function myFunctionA() {
         aa.style.display = 'none';
         a.style.display = 'table';
         a.style.visibility = 'visible';
-        
 
 }
 </script>
@@ -127,6 +146,23 @@ function myFunctionB() {
        a.style.display = 'none';
        aa.style.display = 'table';
        aa.style.visibility = 'visible';
+       
+
+}
+
+</script>
+
+<script type="text/javascript">
+function myFunctionC() {
+    var x = document.getElementById('table3');
+
+
+        
+        
+     
+        x.style.display = 'table';
+       x.style.visibility = 'visible';
+       
        
 
 }

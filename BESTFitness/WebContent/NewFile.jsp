@@ -37,7 +37,7 @@ div.transbox p {
  			<td></form><form action="register.jsp"><input type="submit" value="Registrieren"/></form></td>
 		</tr>
 </table>
-<h1>BESTFitnes</h1>
+<h1>BESTFitness</h1>
 
 </body>
 </html>

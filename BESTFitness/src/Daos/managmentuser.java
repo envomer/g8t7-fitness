@@ -16,7 +16,7 @@ public class managmentuser implements userdao, Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	/* ---------------------------------- */
-	private ArrayList<user> userListe;
+	public ArrayList<user> userListe;
 	private String FileName;
 
 	public managmentuser(String fileName) {
