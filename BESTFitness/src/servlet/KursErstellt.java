@@ -59,12 +59,13 @@ public class KursErstellt extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
+	    String uhrVon = request.getParameter("timevon");
+	    String uhrBis = request.getParameter("timebis");
 		String raum = request.getParameter("raum");
 		String trainer = request.getParameter("trainer");
 		int maxKap = Integer.parseInt(request.getParameter("teilnameanzahl"));
 		
-		Kurs neuerKurs = new Kurs(1, name, date, raum, trainer, maxKap);	
+		Kurs neuerKurs = new Kurs(1, name, date, uhrVon, uhrBis, raum, trainer, maxKap);	
 		KursManagement km = new KursManagement("kurs.txt");
 		km.speicherKurs(neuerKurs);
 		

@@ -1,8 +1,10 @@
 package Daos;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -22,7 +24,7 @@ public class KursManagement implements KursDao{
         File file = new File(this.pfad);
 
         if (file.exists()) {
-            this.getKursList();
+        	dbLaden();
         } else {
         	try {
 				file.createNewFile();
@@ -86,4 +88,19 @@ public class KursManagement implements KursDao{
         }
     }
 	
+	@SuppressWarnings("unchecked")
+	public void dbLaden() {
+
+		try {
+			FileInputStream fis = new FileInputStream(pfad);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			kurse = (ArrayList<Kurs>) ois.readObject();
+			ois.close();
+			fis.close();
+		} catch (IOException | ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+	}
 }
