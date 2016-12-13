@@ -39,7 +39,7 @@ tr:nth-child(even) {
     <tr>
       <td align="right">Benutzer ID</td>
       <td>
-        <input maxlength="50" name="id" size="45"  type="text" />
+        <input maxlength="50" name="id" size="45"  type="number" />
       </td>
     </tr>
   
