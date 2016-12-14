@@ -29,9 +29,9 @@ tr:nth-child(even) {
 <td>
 <h1 align="center">
 <%
-//user b =(user)request.getAttribute("loginseite");
+user b =(user)request.getAttribute("loginseite");
 
-//out.print("Wilkommen Trainer: "+b.getBenutzernachname());
+out.print("Wilkommen Trainer: "+b.getBenutzernachname());
 %>
 </h1>
 </td>

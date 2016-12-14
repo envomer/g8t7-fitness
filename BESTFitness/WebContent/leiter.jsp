@@ -33,8 +33,8 @@ tr:nth-child(even) {
 <td>
 <h1 align="center">
 <%
-//user b =(user)request.getAttribute("loginseite");
-//out.print("Wilkommen Leiter: "+b.getBenutzernachname());
+user b =(user)request.getAttribute("loginseite");
+out.print("Wilkommen Leiter: "+b.getBenutzernachname());
 %>
 </h1>
 </td>
