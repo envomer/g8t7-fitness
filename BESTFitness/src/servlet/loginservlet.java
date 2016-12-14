@@ -64,7 +64,7 @@ public class loginservlet extends HttpServlet {
 				}
 		    }
 	    	 if(check==false){
-	    
+	    		 request.setAttribute("loginseite", "Falsche Benutzerid oder Kennwort");
 	    	RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
 			dispa.forward(request, response);}
 	    	

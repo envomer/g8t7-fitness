@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    import="modells.user" pageEncoding="UTF-8" %>
+<%@ page import="Daos.KursManagement" %>
+<%@ page import="modells.Kurs" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,7 +34,6 @@ tr:nth-child(even) {
 <h1 align="center">
 <%
 //user b =(user)request.getAttribute("loginseite");
-
 //out.print("Wilkommen Leiter: "+b.getBenutzernachname());
 %>
 </h1>
@@ -62,7 +65,7 @@ tr:nth-child(even) {
        <tr>
       <td align="right">Time:</td>
       <td>
-        <input maxlength="5" name="time" size="5" type="time" value="12:00"/>   bis   <input maxlength="5" name="time" size="5" type="time" value="13:00"/>
+        <input maxlength="5" name="timevon" size="5" type="time" value="12:00"/>   bis   <input maxlength="5" name="timebis" size="5" type="time" value="13:00"/>
       </td>
     </tr>
     <tr>
@@ -160,6 +163,30 @@ tr:nth-child(even) {
 <th>Andern</th>
 <th>Löschen</th>
 </tr>
+
+<%
+KursManagement km = new KursManagement("kurs.txt");
+ArrayList<Kurs> kurse = km.getKursList();
+
+for (int i = 0; i < kurse.size(); i++) { 
+String uhrzeit = kurse.get(i).getKursUhrVon(); 
+uhrzeit += " - ";
+uhrzeit += kurse.get(i).getKursUhrBis();
+%>
+
+<tr>
+<td align="right"> <%= kurse.get(i).getKursName() %> </td>
+<td align="right"> <%= uhrzeit %> </td>
+<td align="right"> <%= kurse.get(i).getKursTrainer() %> </td>
+<td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %> </td>
+<td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
+<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
+<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
+</tr>
+<%	
+}
+%>
 <tr>
 <td align="right">Aerobic</td>
 <td align="right">12:00-13:00</td>
@@ -228,6 +255,26 @@ tr:nth-child(even) {
 <th>Andern</th>
 <th>Löschen</th>
 </tr>
+<%
+for (int i = 0; i < kurse.size(); i++) { 
+String uhrzeit = kurse.get(i).getKursUhrVon(); 
+uhrzeit += " - ";
+uhrzeit += kurse.get(i).getKursUhrBis();%>
+
+<tr>
+<td align="right"> <%= kurse.get(i).getKursName() %> </td>
+<td align="right"> <%= uhrzeit %> </td>
+<td align="right"> <%= kurse.get(i).getKursTrainer() %> </td>
+<td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %> </td>
+<td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
+
+<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
+<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
+</tr>
+<%	
+}
+%>
 <tr>
 <td align="right">Aerobic</td>
 <td align="right">12:00-13:00</td>
