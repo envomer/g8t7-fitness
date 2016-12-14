@@ -18,9 +18,14 @@ public class Kurs implements Serializable {
 	private int teilnehmerAnzahl;
 	
 	/**
-	 * Kontruktor
-	 * @param kursName Name des Kurses
+	 * Konstruktor
 	 * @param kursID id des Kurses
+	 * @param kursName Name des Kurses
+	 * @param datum das Datum des Kurses
+	 * @param uhrVon der Beginn des Kurses
+	 * @param uhrBis der Ende des Kurses
+	 * @param raum die Raum Nummer des Kurses
+	 * @param trainer der Trainer des Kurses
 	 * @param teilnehmerAnzahl maximale TeilnehmerAnzahl
 	 */
 	public Kurs(int kursID, String kursName, Date datum, String uhrVon, String uhrBis, String raum, String trainer, int teilnehmerAnzahl){

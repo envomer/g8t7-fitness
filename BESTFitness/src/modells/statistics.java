@@ -44,7 +44,7 @@ public class statistics {
 		//TODO: 4. Meistbesuchte Kurse
 	}
 	
-	public void mostClickedTrainers(){
+	public void mostVisitedTrainers(){
 		//TODO: 5. Meistbesuchte Trainer (LeiterView)
 	}
 	

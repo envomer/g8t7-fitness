@@ -56,7 +56,7 @@
       <td></td>
       <td>
         <input type="submit" value="Register"  name="action"  style="zoom:1.5"/>
-         <input type="submit"  value="Zurruck"   name="action"  style="zoom:1.5"/> 
+         <input type="submit"  value="Zurück"   name="action"  style="zoom:1.5"/> 
         </form>
   
       </td>
