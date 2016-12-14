@@ -1,51 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="modells.user"
-     pageEncoding="UTF-8" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style>
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-</head>
-<body>
-<table>
-<tr>
-<td>
-<h1 align="center">
-<%
-user b = (user)request.getAttribute("loginseite");
-if( b != null ) {
-    out.print("Wilkommen Kunde: "+b.getBenutzernachname());
-}
-%>
-</h1>
-</td>
-<td>
-  <form action="NewFile.jsp"><input type="submit"  value="Abmelden"   name="action"  style="zoom:1.5"/> </form>
-  </td>
-  </tr>
- </table> 
-<p align='center'>
-<h4 id="anmelden" style="visibility:hidden; display:none">Du bist erfolgreich angemeldet</h4>
-<h4 id="abmelden" style="visibility:hidden; display:none">Du bist  abgemeldet</h4>
-<table width='100%' id="table1" border="2">
+<%@ page import="modells.user" %>
+<jsp:include page="partials/header.jsp" />
+<table width='100%' id="table1" border="2" class="table">
 <tr>
 <th>Kurs nr</th>
 <th>Tag </th>
@@ -71,7 +26,7 @@ if( b != null ) {
 </p>
 
 <p align='center'>
-<table width='100%' border="2"  id="table2" style="visibility:hidden;display:none;">
+<table class="table" width='100%' border="2"  id="table2" style="visibility:hidden;display:none;">
 <tr>
 <th>Kurs nr</th>
 <th>Tag </th>
@@ -169,6 +124,5 @@ function myFunctionC() {
 }
 
 </script>
-</body>
-</html>
+<jsp:include page="partials/footer.jsp" />
 

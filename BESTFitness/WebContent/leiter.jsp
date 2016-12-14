@@ -1,52 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   import="modells.user" pageEncoding="UTF-8" %>
 <%@ page import="Daos.KursManagement" %>
 <%@ page import="modells.Kurs" %>
 <%@ page import="java.util.ArrayList" %>
+<jsp:include page="partials/header.jsp" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Leiter</title>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-</head>
-<body>
-<table>
-<tr>
-<td>
-<h1 align="center">
-<%
-//user b =(user)request.getAttribute("loginseite");
-//out.print("Wilkommen Leiter: "+b.getBenutzernachname());
-%>
-</h1>
-</td>
-<td>
-  <form action="NewFile.jsp"><input type="submit"  value="Abmelden"   name="action"  style="zoom:1.5"/> </form>
-  </td>
-  </tr>
- </table> 
 <h3 align="left">Neues Kurs einfuegen/aendern</h3>
 
 <form action="KursErstellt" method="POST">
-<table id="erstellen" border="0" cellspacing="2" cellpadding="2">
+<table class="table" id="erstellen" border="0" cellspacing="2" cellpadding="2">
   <tbody>
     <tr>
       <td align="right">Kurs name:</td>
@@ -97,7 +57,7 @@ tr:nth-child(even) {
 </form>
 
 <form action="NewFile.jsp" method="POST">
-<table id="erstellenB" border="0"  style="display:none" cellspacing="2" cellpadding="2">
+<table class="table" id="erstellenB" border="0"  style="display:none" cellspacing="2" cellpadding="2">
   <tbody>
     <tr>
       <td align="right">Kurs name:</td>
@@ -151,7 +111,7 @@ tr:nth-child(even) {
 <br>
 <h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"></input></h2>
 <p align='center'>
-<table width='100%' border="2" id="kurs">
+<table class="table" width='100%' border="2" id="kurs">
 <tr>
 
 <th>Kurs Name </th>
@@ -243,7 +203,7 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 </tr>
 </table>
 
-<table width='100%' id="kursB" style=" display:none; visibility:hidden" border="2">
+<table class="table" width='100%' id="kursB" style=" display:none; visibility:hidden" border="2">
 <tr>
 
 <th>Kurs Name </th>
@@ -322,7 +282,7 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 </table>
 
 Teilnehmer der Kurs:
-<table width='100%' border="2" id="teilahme" style="visibility:hidden">
+<table class="table" width='100%' border="2" id="teilahme" style="visibility:hidden">
 <tr>
 
 <th>Vorname</th>
@@ -437,5 +397,4 @@ function myFunctionC() {
 }
 
 </script>
-</body>
-</html>
+<jsp:include page="partials/footer.jsp" />

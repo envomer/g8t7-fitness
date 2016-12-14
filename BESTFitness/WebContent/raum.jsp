@@ -1,9 +1,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="raum.Raum" %>
+<%@ page import="modells.user" %>
 <jsp:include page="partials/header.jsp" />
 
+<%
+    user usr = (user)session.getAttribute("user");
+%>
+<% if(usr != null) { %>
 <h1>Raum verwaltung</h1>
-
 <div class="form-container">
     <form action="/raum" method="POST" class="form">
         <div class="form-group">
@@ -23,6 +27,7 @@
         </div>
     </form>
 </div>
+<% } %>
 
 <%
     ArrayList<Raum> raeume = (ArrayList<Raum>) request.getAttribute("raeume");
@@ -30,7 +35,7 @@
     out.print("Anzahl:" + anzahl);
     if( anzahl > 0 ) {
 %>
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>Nr.</th>
@@ -51,5 +56,4 @@
     </tbody>
 </table>
 <% } %>
-</body>
-</html>
+<jsp:include page="partials/footer.jsp" />

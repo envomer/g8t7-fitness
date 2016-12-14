@@ -7,6 +7,8 @@
         <%
     }
     else {
-        out.print("Liste aller kurse fuer gueste");
+        %>
+<jsp:include page="gast.jsp" />
+<%
     }
 %>

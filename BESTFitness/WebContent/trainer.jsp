@@ -1,49 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   import="modells.user" pageEncoding="UTF-8" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Leiter</title>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-</head>
-<body>
-<table>
-<tr>
-<td>
-<h1 align="center">
-<%
-//user b =(user)request.getAttribute("loginseite");
-
-//out.print("Wilkommen Trainer: "+b.getBenutzernachname());
-%>
-</h1>
-</td>
-<td>
-  <form action="NewFile.jsp"><input type="submit"  value="Abmelden"   name="action"  style="zoom:1.5"/> </form>
-  </td>
-  </tr>
- </table> 
-<br>
+<jsp:include page="partials/header.jsp" />
 <h2>Datum:  <input type="text" value="20/10/2016" style="font-size: 24px;"></input></h2>
 <p align='center'>
-<table width='100%' border="2" id="kurs">
+<table class="table" width='100%' border="2" id="kurs">
 <tr>
 
 <th>Kurs Name </th>
@@ -105,7 +63,7 @@ tr:nth-child(even) {
 </tr>
 </table>
 
-<table width='100%' id="kursB" style=" display:none; visibility:hidden" border="2">
+<table class="table" width='100%' id="kursB" style=" display:none; visibility:hidden" border="2">
 <tr>
 
 <th>Kurs Name </th>
@@ -169,7 +127,7 @@ tr:nth-child(even) {
 </table>
 
 Teilnehmer der Kurs:
-<table width='100%' border="2" id="teilahme" style="visibility:hidden">
+<table class="table" width='100%' border="2" id="teilahme" style="visibility:hidden">
 <tr>
 
 <th>Vorname</th>
@@ -206,7 +164,7 @@ Teilnehmer der Kurs:
 <td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
 </tr>
 </table>
-<table width='100%' border="2" id="teilahmeA" style="visibility:hidden">
+<table class="table" width='100%' border="2" id="teilahmeA" style="visibility:hidden">
 <tr>
 <th>Vorname</th>
 <th>Nachname </th>
@@ -284,6 +242,4 @@ function myFunctionC() {
 }
 
 </script>
-</body>
-</html>
-
+<jsp:include page="partials/footer.jsp" />
