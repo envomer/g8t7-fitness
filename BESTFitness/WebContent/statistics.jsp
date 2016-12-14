@@ -94,102 +94,6 @@
     </div>
   	
   </div>
-  
-  
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading"><h4>Kursteilnehmer</h4></div>
-  
-  <div class="dropdown">
-  <p class="col-md-4">Kurzhanteltraining</p>
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-  	Teilnehmer
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-   <!-- Table -->
-  <table class="table">
-    <tr>
-    	<tr><th>Name</th></tr>
-    	<tr><td>Maik Schneider</td></tr>
-    	<tr><td>Christina H. Silva</td></tr>
-    	<tr><td>Dennis M. English</td></tr>
-    	<tr><td>Michelle T. King</td></tr>
-    	<tr><td>Tanja Lehrer</td></tr>
-    </tr>
-    
-    
-  </table>
-  </ul>
-</div>
-
-<div class="dropdown">
-  <p class="col-md-4">Deepwork</p>
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-  	Teilnehmer
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-   <!-- Table -->
-  <table class="table">
-    <tr>
-    	<tr><th>Name</th></tr>
-    	<tr><td>Maik Schneider</td></tr>
-    	<tr><td>Christina H. Silva</td></tr>
-    	<tr><td>Dennis M. English</td></tr>
-    	<tr><td>Michelle T. King</td></tr>
-    	<tr><td>Tanja Lehrer</td></tr>
-    </tr>
-    
-    
-  </table>
-  </ul>
-</div>
-
-<div class="dropdown">
-  <p class="col-md-4">RückenYoga</p>
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-  	Teilnehmer
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-   <!-- Table -->
-  <table class="table">
-    <tr>
-    	<tr><th>Name</th></tr>
-    	<tr><td>Maik Schneider</td></tr>
-    	<tr><td>Christina H. Silva</td></tr>
-    	<tr><td>Dennis M. English</td></tr>
-    	<tr><td>Michelle T. King</td></tr>
-    	<tr><td>Tanja Lehrer</td></tr>
-    </tr>
-    
-    
-  </table>
-  </ul>
-</div>
-
- 
-</div>
-
- 
-<div class="panel panel-default">
-  <div class="panel-heading"><h4>Akuelle Kurse</h4></div>
-  <table class="table">
-    <tr>
-    	<th>Kursname</th>
-    	<th>Datum</th>
-    	<th>Trainer</th>
-    </tr>
-    <tr>
-    	<td>RückenYoga</td>
-    	<td>12.01 bis 21.01.2016</td>
-    	<td>Mario</td>
-    </tr>
-  </table>
-</div>
-
-
 
 <div class="well well-sm">
 	<h4>Aktuelle Kurse</h4>
@@ -242,7 +146,48 @@
   		<td class="col-md-3">01.12 bis 23.02.2016</td>
   		<td class="col-md-3">12:00-14:00</td>
   	</table>
-  	<table id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+  	<table id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+  		<tr>
+    		<th class="col-md-4">Kunden Nr</th>
+    		<th class="col-md-8">Name</th>
+    	</tr>
+     	<tr>
+     		<td class="col-md-4">12</td>
+     		<td class="col-md-8">Peter Mayer</td>
+     	</tr>
+     	<tr>
+    		<td class="col-md-4">14</td>
+      	<td class="col-md-8">Hans Peter</td>
+      </tr>
+     	<tr>
+     		<td class="col-md-4">52</td>
+     		<td class="col-md-8">Peter Parker</td>
+     	</tr>
+     	<tr>
+     		<td class="col-md-4">1</td>
+     		<td class="col-md-8">Tim Tischler</td>
+     	</tr>
+     	<tr>
+ 		   <td class="col-md-4">7</td>
+     		<td class="col-md-8">John Zeit</td>
+     	</tr>
+  	
+  		
+  	</table>
+  		
+  	<div class="progress">
+  		<div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+    		30%
+    	</div>
+    </div>
+    
+        <table>
+    	<th class="col-md-3" data-toggle="collapse" role="button" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Functional Training</th>
+    	<td class="col-md-3">Julia</td>
+  		<td class="col-md-3">01.12 bis 23.02.2016</td>
+  		<td class="col-md-3">12:00-14:00</td>
+  	</table>
+  	<table id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
   		<tr>
     		<th class="col-md-4">Kunden Nr</th>
     		<th class="col-md-8">Name</th>
@@ -277,6 +222,9 @@
     	</div>
     </div>
 </div>
+</div>
+
+
 
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
