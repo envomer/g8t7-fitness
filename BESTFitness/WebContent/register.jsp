@@ -33,7 +33,7 @@
     <tr>
       <td align="right">Typ:</td>
       <td>
-      <select name="typ" align="right" style="zoom:1.5">
+      <select name="typ" align="right">
        <option value="kunde.jsp">Kunde</option>
        <option value="trainer.jsp">Trainer</option>
        <option value="leiter.jsp">Leiter</option>
@@ -55,17 +55,16 @@
     <tr>
       <td></td>
       <td>
-        <input type="submit" value="Register"  name="action"  style="zoom:1.5"/>
-         <input type="submit"  value="Zurück"   name="action"  style="zoom:1.5"/> 
+        <input type="submit" value="Register"  name="action" />
+         <input type="submit"  value="Zurueck"   name="action" />
         </form>
-  
       </td>
     </tr>
   </tbody>
 </table>            
              <%String ant = (String)request.getAttribute("geloeschteid"); if(ant!=null)out.println(ant); %>            
   <h5> Id  <input maxlength="50" name="idloesch" size="10"   type="text" />                          
-                        <input type="submit"  value="Loeschen"   name="action"  style="zoom:1.5"/>  
+                        <input type="submit"  value="Loeschen"   name="action" />
                          
                          
 <jsp:include page="partials/footer.jsp" />

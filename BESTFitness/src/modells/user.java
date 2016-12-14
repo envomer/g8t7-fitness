@@ -100,6 +100,10 @@ public class user implements Serializable{
 		this.pass = pass;
 	}
 
+	public String getName() {
+        return this.benutzervorname + " " + this.benutzernachname;
+    }
+
 
        
 }

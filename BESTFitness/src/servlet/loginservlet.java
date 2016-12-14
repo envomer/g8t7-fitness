@@ -56,16 +56,16 @@ public class loginservlet extends HttpServlet {
                         HttpSession session = request.getSession();
                         session.setAttribute("user", managuser.getuserList().get(a));
 
-                        response.sendRedirect("/");
+
+					    check = true;
+                        break;
 
 //						seite = managuser.getuserList().get(a).getBenutzertyp();
-					    check = true;
 //						request.setAttribute("loginseite", managuser.getuserList().get(a));
 //						RequestDispatcher dispa = request.getRequestDispatcher(seite);
 //						dispa.forward(request, response);
 						
 					}
-					
 				}
 		    }
 	    	 if(check==false){
@@ -73,6 +73,9 @@ public class loginservlet extends HttpServlet {
                  RequestDispatcher dispa = request.getRequestDispatcher("NewFile.jsp");
                  dispa.forward(request, response);
 	    	 }
+	    	 else {
+                 response.sendRedirect("/");
+             }
 	    }
 	}
 }

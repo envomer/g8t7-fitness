@@ -49,7 +49,7 @@
     <tr>
       <td></td>
       <td>
-        <input type="submit" value="Kurs erstellen"  style="font-size : 60px;  height: 100px;"/>
+        <input type="submit" value="Kurs erstellen" class="btn btn-primary"/>
       </td>
     </tr>
   </tbody>
@@ -140,9 +140,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right"> <%= kurse.get(i).getKursTrainer() %> </td>
 <td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %> </td>
 <td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
-<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
+<td align="right"><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><input type=submit value="loeschen" class="btn btn-default btn-sm" onclick="myFunctionB()"></td>
 </tr>
 <%	
 }
@@ -153,9 +153,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">1 </td>
-<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 
 </tr>
 <tr>
@@ -164,9 +164,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right">Trainer</td>
 <td align="right">13</td>
 <td align="right">2 </td>
-<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 
 </tr>
 <tr>
@@ -175,9 +175,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right">Trainer</td>
 <td align="right">15</td>
 <td align="right">3 </td>
-<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 
 </tr>
 <tr>
@@ -186,9 +186,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">4 </td>
-<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
+<td align="right"><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><input type=submit value="loeschen" class="btn btn-default btn-sm" onclick="myFunctionB()"></td>
 
 </tr>
 <tr>
@@ -197,9 +197,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();
 <td align="right">Trainer</td>
 <td align="right">5</td>
 <td align="right">5 </td>
-<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
-<td align="right"><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionC()"></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><input type=submit value="Anzeigen" class="btn btn-default btn-sm" onclick="myFunction()"></td>
+<td align="right"><input type=submit value="Aendern" class="btn btn-default btn-sm" onclick="myFunctionC()"></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 </tr>
 </table>
 
@@ -228,9 +228,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 <td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %> </td>
 <td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
 
-<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionB()"></td>
+<td align="right"><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><input type=submit value="loeschen" class="btn btn-default btn-sm" onclick="myFunctionB()"></td>
 </tr>
 <%	
 }
@@ -241,9 +241,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 <td align="right">Trainer</td>
 <td align="right">10</td>
 <td align="right">1 </td>
-<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 
 </tr>
 <tr>
@@ -252,9 +252,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 <td align="right">Trainer</td>
 <td align="right">13</td>
 <td align="right">2 </td>
-<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 
 </tr>
 <tr>
@@ -263,9 +263,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 <td align="right">Trainer</td>
 <td align="right">15</td>
 <td align="right">3 </td>
-<td align="right"><form><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Anzeigen" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="Aendern" class="btn btn-default btn-sm"></form></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 
 </tr>
 
@@ -275,9 +275,9 @@ uhrzeit += kurse.get(i).getKursUhrBis();%>
 <td align="right">Trainer</td>
 <td align="right">5</td>
 <td align="right">5 </td>
-<td align="right"><input type=submit value="Anzeigen" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunction()"></td>
-<td align="right"><input type=submit value="Aendern" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionC()"></td>
-<td align="right"><form><input type=submit value="loeschen" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><input type=submit value="Anzeigen" class="btn btn-default btn-sm" onclick="myFunction()"></td>
+<td align="right"><input type=submit value="Aendern" class="btn btn-default btn-sm" onclick="myFunctionC()"></td>
+<td align="right"><form><input type=submit value="loeschen" class="btn btn-default btn-sm"></form></td>
 </tr>
 </table>
 
@@ -293,30 +293,30 @@ Teilnehmer der Kurs:
 <tr>
 <td align="right">Senan</td>
 <td align="right">Ahmadzada</td>
-<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Abmelden" class="btn btn-default btn-sm"></form></td>
 </tr>
 <tr>
 <td align="right">Yunus Emre</td>
 <td align="right">Kanitoglu</td>
 
-<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Abmelden" class="btn btn-default btn-sm"></form></td>
 </tr>
 <tr>
 <td align="right">Rabit</td>
 <td align="right">Ljatifi</td>
 
-<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Abmelden" class="btn btn-default btn-sm"></form></td>
 </tr>
 <tr>
 <td align="right">Omer</td>
 <td align="right">Mohamed Ali</td>
-<td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;" onclick="myFunctionA()"></td>
+<td align="right"><input type=submit value="Abmelden" class="btn btn-default btn-sm" onclick="myFunctionA()"></td>
 </tr>
 <tr>
 <td align="right">Max</td>
 <td align="right">Musterman</td>
 
-<td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
+<td align="right"><input type=submit value="Abmelden" class="btn btn-default btn-sm"></td>
 </tr>
 </table>
 <table width='100%' border="2" id="teilahmeA" style="visibility:hidden">
@@ -329,26 +329,26 @@ Teilnehmer der Kurs:
 <tr>
 <td align="right">Sanan</td>
 <td align="right">Ahmadzada</td>
-<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Abmelden" class="btn btn-default btn-sm"></form></td>
 </tr>
 <tr>
 <td align="right">Yunus Emre</td>
 <td align="right">Kanitoglu</td>
 
-<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Abmelden" class="btn btn-default btn-sm"></form></td>
 </tr>
 <tr>
 <td align="right">Rabit</td>
 <td align="right">Ljatifi</td>
 
-<td align="right"><form><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></form></td>
+<td align="right"><form><input type=submit value="Abmelden" class="btn btn-default btn-sm"></form></td>
 </tr>
 
 <tr>
 <td align="right">Max</td>
 <td align="right">Musterman</td>
 
-<td align="right"><input type=submit value="Abmelden" style="font-size : 40px; width: 100%; height: 100px;"></td>
+<td align="right"><input type=submit value="Abmelden" class="btn btn-default btn-sm"></td>
 </tr>
 </table>
 

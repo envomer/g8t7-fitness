@@ -13,10 +13,15 @@ import java.io.IOException;
 public class raumservlet extends HttpServlet
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RaumManagement raeume = new RaumManagement();
-        System.out.println("getting raeume...." + raeume.getRaumList().size());
+        try {
+            RaumManagement raeume = new RaumManagement();
+            System.out.println("getting raeume...." + raeume.getRaumList().size());
 
-        request.setAttribute("raeume", raeume.getRaumList());
+            request.setAttribute("raeume", raeume.getRaumList());
+        }
+        catch (Exception e) {
+            request.setAttribute("raeume", null);
+        }
 
         response.setContentType("text/html");
         request.getRequestDispatcher("raum.jsp").include(request, response);

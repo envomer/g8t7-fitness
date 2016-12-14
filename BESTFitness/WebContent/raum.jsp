@@ -5,8 +5,11 @@
 
 <%
     user usr = (user)session.getAttribute("user");
+    if( usr != null ) {
+        System.out.println(usr.getBenutzertyp());
+    }
 %>
-<% if(usr != null && usr.getBenutzertyp() == "leiter.jsp") { %>
+<% if(usr != null && usr.getBenutzertyp().equals("leiter.jsp")) { %>
 <h1>Raum verwaltung</h1>
 <div class="form-container">
     <form action="/raum" method="POST" class="form">
@@ -53,6 +56,21 @@
             out.print("</tr>");
         }
     %>
+    <tr>
+        <td>200</td>
+        <td>Raum 200</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>Raum 201</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>Raum 202</td>
+        <td>89</td>
+    </tr>
     </tbody>
 </table>
 <% } %>

@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>BESTFitness</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         table.table {
             font-family: arial, sans-serif;
@@ -42,23 +43,32 @@
     </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <%
             user usr = (user)session.getAttribute("user");
         %>
-        <nav>
-            <a href="/raum">Räume</a>
-            <a href="/kurse">Kurse</a>
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/raum">Räume</a></li>
+                <li><a href="/kurse">Kurse</a></li>
+                <li><a href="/statistics.jsp">Stats</a></li>
+
 
             <%
                 if( usr != null ) {
-                    out.println("<a href=\"/logout\">Abmelden</a>");
-
-                    out.println("(" + usr.getBenutzervorname() + " | " + usr.getBenutzertypeClean() + ")");
+                    out.println("<li><a href=\"/logout\">Abmelden</a></li>");
                 }
                 else {
-                    out.println("<a href=\"/login.jsp\">Anmelden</a>");
-                    out.println("<a href=\"/register.jsp\">Registrieren</a>");
+                    out.println("<li><a href=\"/login.jsp\">Anmelden</a></li>");
+                    out.println("<li><a href=\"/register.jsp\">Registrieren</a></li>");
+                }
+            %>
+            </ul>
+
+            <%
+                if( usr != null ) {
+                    out.println("<p class=\"navbar-text\">[Angemeldet als " + usr.getName() + " | <b>" + usr.getBenutzertypeClean() + "</b>]</p>");
                 }
             %>
         </nav>
