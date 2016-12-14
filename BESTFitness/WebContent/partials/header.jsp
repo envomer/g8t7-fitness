@@ -52,7 +52,9 @@
 
             <%
                 if( usr != null ) {
-                    out.print("<a href=\"/logout\">Abmelden</a>");
+                    out.println("<a href=\"/logout\">Abmelden</a>");
+
+                    out.println("(" + usr.getBenutzervorname() + " | " + usr.getBenutzertypeClean() + ")");
                 }
                 else {
                     out.println("<a href=\"/login.jsp\">Anmelden</a>");

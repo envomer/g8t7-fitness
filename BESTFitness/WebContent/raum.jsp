@@ -6,7 +6,7 @@
 <%
     user usr = (user)session.getAttribute("user");
 %>
-<% if(usr != null) { %>
+<% if(usr != null && usr.getBenutzertyp() == "leiter.jsp") { %>
 <h1>Raum verwaltung</h1>
 <div class="form-container">
     <form action="/raum" method="POST" class="form">

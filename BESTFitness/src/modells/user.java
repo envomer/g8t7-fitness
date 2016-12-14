@@ -29,6 +29,9 @@ public class user implements Serializable{
 
 
 
+	public String getBenutzertypeClean() {
+        return this.benutzertyp.replace(".jsp", "");
+    }
 	public String getBenutzertyp() {
 		return this.benutzertyp;
 	}

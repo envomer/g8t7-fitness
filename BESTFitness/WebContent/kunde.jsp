@@ -1,4 +1,7 @@
 <%@ page import="modells.user" %>
+<%@ page import="modells.Kurs" %>
+<%@ page import="Daos.KursManagement" %>
+<%@ page import="java.util.ArrayList" %>
 <jsp:include page="partials/header.jsp" />
 <table width='100%' id="table1" border="2" class="table">
 <tr>
@@ -8,6 +11,33 @@
 <th>Trainer </th>
 <th>Anmeldung </th>
 </tr>
+    <%
+        KursManagement km = new KursManagement("kurs.txt");
+        ArrayList<Kurs> kurse = (ArrayList<Kurs>) km.getKursList();
+
+        for (int i = 0; i < kurse.size(); i++) {
+            Kurs kur = kurse.get(i);
+            String uhrzeit = kur.getKursUhrVon();
+            uhrzeit += " - ";
+            uhrzeit += kur.getKursUhrBis();
+    %>
+
+    <tr>
+        <td align="right"> <%= kur.getKursName() %> </td>
+        <td align="right"> <%= kur.getKursDatum() %> </td>
+        <td align="right"> <%= uhrzeit %> </td>
+        <td align="right"> <%= kur.getKursTrainer() %> </td>
+        <td align="right">
+            <form method="post" action="/kurse" class="kurs-signup">
+                <input type="hidden" name="anmelden" value="true">
+                <input type="hidden" name="kurs" value="<%=kur.getKursID()%>">
+                <input type=submit value="Anmelden">
+            </form>
+        </td>
+    </tr>
+    <%
+        }
+    %>
 <tr>
 <td align="right">Kurs 1</td>
 <td align="right">SONTAG 12/10/2016 </td>
@@ -72,6 +102,28 @@ Suche: <input type="text" placeholder="Kurse Suchen"> <input type=submit value="
 
 
 <script>
+    // Native
+    // Check if the DOMContentLoaded has already been completed
+    if (document.readyState === 'complete' || document.readyState !== 'loading') {
+        onReady();
+    } else {
+        document.addEventListener('DOMContentLoaded', onReady);
+    }
+
+    function onReady() {
+        var signup = document.getElementsByClassName('kurs-signup');
+
+        for(var i in signup) {
+            if( ! signup[i] ) continue;
+            signup[i].addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                alert("Sie sind nun angemeldet.");
+                e.target.style.display = 'none';
+            })
+        }
+    }
+
 function myFunctionA() {
      var x = document.getElementById('table1');
     var xx = document.getElementById('table2');
