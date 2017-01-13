@@ -1,15 +1,15 @@
-package Daos;
+package dao;
 
 import java.util.ArrayList;
 
-import modells.user;
+import modells.User;
 
-public interface userdao {
+public interface UserDao {
 
-	public ArrayList<user> getuserList(); 
-	public user getuserbyId(int id);
-	public boolean  speichereuser(user fr); 
-	public void loescheuser(user fr);
+	public ArrayList<User> getuserList(); 
+	public User getuserbyId(int id);
+	public boolean  speichereuser(User fr); 
+	public void loescheuser(User fr);
 	
 	
 }

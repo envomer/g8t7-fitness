@@ -1,9 +1,9 @@
-package Daos;
+package dao;
 
 import java.util.ArrayList;
 
 import modells.Kurs;
-import modells.user;
+import modells.User;
 
 public interface KursDao {
 

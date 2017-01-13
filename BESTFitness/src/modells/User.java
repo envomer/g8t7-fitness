@@ -2,7 +2,7 @@ package modells;
 
 import java.io.Serializable;
 
-public class user implements Serializable{
+public class User implements Serializable{
 
 	/**
 	 * 
@@ -16,7 +16,7 @@ public class user implements Serializable{
 	private String pass;
 
 
-	public user(String benutzertyp, int benutzerid, String benutzernachname, String benutzervorname, String addresse, String pass) {
+	public User(String benutzertyp, int benutzerid, String benutzernachname, String benutzervorname, String addresse, String pass) {
 		
 		this.benutzertyp = benutzertyp;
 		this.benutzerid=benutzerid;

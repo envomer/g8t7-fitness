@@ -3,13 +3,13 @@ package modells;
 import java.util.ArrayList;
 import java.util.List;
 
-import Daos.KursManagement;
+import management.KursManagement;
 import modells.Kurs;
 @SuppressWarnings("unused")
-public class statistics {
+public class Statistics {
 	private Object kurse;
 
-	public statistics(){}
+	public Statistics(){}
 	
 	
 	public void topRatedCourse(){

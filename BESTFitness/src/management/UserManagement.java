@@ -1,4 +1,4 @@
-package Daos;
+package management;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,19 +9,20 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import modells.user;
+import dao.UserDao;
+import modells.User;
 
-public class managmentuser implements userdao, Serializable {
+public class UserManagement implements UserDao, Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
 	/* ---------------------------------- */
-	public ArrayList<user> userListe;
+	public ArrayList<User> userListe;
 	private String FileName;
 
-	public managmentuser(String fileName) {
+	public UserManagement(String fileName) {
 		FileName = fileName;
-		userListe = new ArrayList<user>(); 
+		userListe = new ArrayList<User>(); 
 
 		File dosya = new File(FileName); 
 
@@ -40,17 +41,17 @@ public class managmentuser implements userdao, Serializable {
 
 
 	@Override
-	public ArrayList<user> getuserList() {
+	public ArrayList<User> getuserList() {
 		// TODO Auto-generated method stub
 		return userListe;
 	}
 
 	@Override
-	public user getuserbyId(int id) {
+	public User getuserbyId(int id) {
 
 	
 
-		for (user f : userListe) {
+		for (User f : userListe) {
 			
 			if (f.getBenutzerid() == id)
 				return f;
@@ -60,7 +61,7 @@ public class managmentuser implements userdao, Serializable {
 	}
 
 	@Override
-	public boolean speichereuser(user fr) {
+	public boolean speichereuser(User fr) {
 		boolean bool = false;
 		for (int a = 0;a < userListe.size(); a++ )
 			if (userListe.get(a).getBenutzerid() == fr.getBenutzerid())
@@ -75,10 +76,10 @@ public class managmentuser implements userdao, Serializable {
 
 	
 	@Override
-	public void loescheuser(user fr) {
+	public void loescheuser(User fr) {
 		boolean gefunden = false;
 
-		for (user f : userListe)
+		for (User f : userListe)
 			if (f.getBenutzerid()== fr.getBenutzerid())
 				gefunden = true;
 
@@ -110,7 +111,7 @@ public class managmentuser implements userdao, Serializable {
 		try {
 			FileInputStream fis = new FileInputStream(FileName);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			userListe = (ArrayList<user>) ois.readObject();
+			userListe = (ArrayList<User>) ois.readObject();
 			ois.close();
 			fis.close();
 		} catch (IOException | ClassNotFoundException e) {

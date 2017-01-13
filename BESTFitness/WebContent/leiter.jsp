@@ -1,4 +1,4 @@
-<%@ page import="Daos.KursManagement" %>
+<%@ page import="management.KursManagement" %>
 <%@ page import="modells.Kurs" %>
 <%@ page import="java.util.ArrayList" %>
 <jsp:include page="partials/header.jsp" />

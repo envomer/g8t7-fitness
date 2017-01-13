@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
 
-import Daos.KursManagement;
+import management.KursManagement;
 import modells.Kurs;
 import raum.Raum;
 
@@ -65,7 +65,6 @@ public class KursErstellt extends HttpServlet {
 		try {
 			date = df.parse(datum);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	    String uhrVon = request.getParameter("timevon");

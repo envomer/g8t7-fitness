@@ -1,10 +1,10 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="raum.Raum" %>
-<%@ page import="modells.user" %>
+<%@ page import="modells.User" %>
 <jsp:include page="partials/header.jsp" />
 
 <%
-    user usr = (user)session.getAttribute("user");
+    User usr = (User)session.getAttribute("user");
     if( usr != null ) {
         System.out.println(usr.getBenutzertyp());
     }

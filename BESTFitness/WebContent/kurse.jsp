@@ -1,5 +1,5 @@
-<%@ page import="modells.user" %><%
-    user usr = (user) session.getAttribute("user");
+<%@ page import="modells.User" %><%
+    User usr = (User) session.getAttribute("user");
 
     if( usr != null ) {
         %>

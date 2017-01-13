@@ -1,6 +1,6 @@
-<%@ page import="modells.user" %>
+<%@ page import="modells.User" %>
 <%@ page import="modells.Kurs" %>
-<%@ page import="Daos.KursManagement" %>
+<%@ page import="dao.KursManagement" %>
 <%@ page import="java.util.ArrayList" %>
 <jsp:include page="partials/header.jsp" />
 <table width='100%' id="table1" border="2" class="table">

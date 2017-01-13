@@ -1,4 +1,4 @@
-package Daos;
+package management;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,8 +8,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+import dao.KursDao;
 import modells.Kurs;
-import modells.user;
+import modells.User;
 import raum.Raum;
 
 public class KursManagement implements KursDao{

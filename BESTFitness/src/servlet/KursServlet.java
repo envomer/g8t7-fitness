@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Daos.managmentuser;
-import modells.classlogin;
+import management.UserManagement;
+import modells.Login;
 
 
 /**
  * Servlet implementation class loginservlet
  */
 @WebServlet("/kurse")
-public class kursservlet extends HttpServlet {
+public class KursServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**

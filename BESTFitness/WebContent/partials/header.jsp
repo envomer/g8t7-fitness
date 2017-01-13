@@ -1,4 +1,4 @@
-<%@ page import="modells.user" %>
+<%@ page import="modells.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <html>
@@ -45,7 +45,7 @@
 <body>
     <div class="container">
         <%
-            user usr = (user)session.getAttribute("user");
+            User usr = (User)session.getAttribute("user");
         %>
         <nav class="navbar navbar-default">
             <ul class="nav navbar-nav">

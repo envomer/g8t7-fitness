@@ -1,6 +1,6 @@
 package modells;
 
-public class classlogin {
+public class Login {
 
 public	String benutzer = "";
 public	String seiteoeffnen = "";

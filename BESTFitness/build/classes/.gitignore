@@ -1,3 +1,9 @@
-/modells/
-/servlet/
+/.DS_Store
 /Daos/
+/modells/
+/raum/
+/servlet/
+/dao/
+/management/
+/constans/
+/constants/
