@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="raum.Raum" %>
+<%@ page import="modells.Raum" %>
 <%@ page import="modells.User" %>
 <jsp:include page="partials/header.jsp" />
 
