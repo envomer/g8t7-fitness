@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 import dao.KursDao;
 import modells.Kurs;
+import modells.Raum;
 import modells.User;
-import raum.Raum;
 
 public class KursManagement implements KursDao{
 

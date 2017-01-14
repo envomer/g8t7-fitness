@@ -1,12 +1,14 @@
 package servlet;
 
-import raum.Raum;
-import raum.RaumManagement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import management.RaumManagement;
+import modells.Raum;
+
 import java.io.IOException;
 
 @WebServlet("/")

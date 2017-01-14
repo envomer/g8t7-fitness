@@ -1,6 +1,8 @@
-package raum;
+package dao;
 
 import java.util.ArrayList;
+
+import modells.Raum;
 
 public interface RaumDAO
 {

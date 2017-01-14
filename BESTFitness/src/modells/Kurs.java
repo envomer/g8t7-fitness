@@ -3,8 +3,6 @@ package modells;
 import java.io.Serializable;
 import java.util.Date;
 
-import raum.Raum;
-
 public class Kurs implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

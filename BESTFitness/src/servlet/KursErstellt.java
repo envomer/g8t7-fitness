@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 
 import management.KursManagement;
 import modells.Kurs;
-import raum.Raum;
+import modells.Raum;
 
 /**
  * Servlet implementation class KursErstellt

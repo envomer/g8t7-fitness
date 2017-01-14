@@ -1,4 +1,4 @@
-package raum;
+package modells;
 
 import java.io.Serializable;
 

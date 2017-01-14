@@ -1,7 +1,10 @@
-package raum;
+package management;
 
 import java.io.*;
 import java.util.ArrayList;
+
+import dao.RaumDAO;
+import modells.Raum;
 
 public class RaumManagement implements RaumDAO
 {
