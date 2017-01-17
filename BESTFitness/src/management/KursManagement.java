@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 import dao.KursDao;
 import modells.Kurs;
-import modells.Raum;
-import modells.User;
+
 
 public class KursManagement implements KursDao{
 
@@ -31,8 +30,8 @@ public class KursManagement implements KursDao{
         } else {
         	try {
 				file.createNewFile();
+				saveKurse();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }
@@ -69,8 +68,6 @@ public class KursManagement implements KursDao{
                 break;
             }
         }
-
-        throw new IllegalArgumentException("Kurs wurde nicht gefunden");
 	}
 
 	@Override
@@ -101,7 +98,6 @@ public class KursManagement implements KursDao{
 			ois.close();
 			fis.close();
 		} catch (IOException | ClassNotFoundException e) {
-
 			e.printStackTrace();
 		}
 

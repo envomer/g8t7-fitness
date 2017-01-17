@@ -1,9 +1,13 @@
 package modells;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Kurs implements Serializable {
+public class Kurs implements Serializable, Comparable<Kurs> {
 	
 	private static final long serialVersionUID = 1L;
 	private int kursID;
@@ -14,6 +18,9 @@ public class Kurs implements Serializable {
 	private String raum;
 	private String trainer;
 	private int teilnehmerAnzahl;
+	private List<String> teilnehmer;
+	private List<String> commentare;
+	private Map<String, Integer> bewertung;
 	
 	/**
 	 * Konstruktor
@@ -35,6 +42,20 @@ public class Kurs implements Serializable {
 		setKursRaum(raum);
 		setKursTrainer(trainer);
 		setTeilnehmerAnzahl(teilnehmerAnzahl);
+		teilnehmer = new ArrayList<String>();
+		commentare = new ArrayList<String>();
+		bewertung = new HashMap<String, Integer>();
+	}
+	
+	public int getRating(){
+		
+		int rating = 0;
+		
+		for(String key : bewertung.keySet()){
+			rating += bewertung.get(key);
+		}
+		
+		return rating;
 	}
 
 	public static long getSerialversionuid() {
@@ -42,7 +63,7 @@ public class Kurs implements Serializable {
 	}
 	
 	/**
-	 * @return kursID gibt die ID des Kurses zurück
+	 * @return kursID gibt die ID des Kurses zurï¿½ck
 	 */
 	public int getKursID() {
 		return kursID;
@@ -57,7 +78,7 @@ public class Kurs implements Serializable {
 	}
 	
 	/**
-	 * @return kursName gibt den Kurs Namen zurück
+	 * @return kursName gibt den Kurs Namen zurï¿½ck
 	 */
 	public String getKursName() {
 		return kursName;
@@ -72,7 +93,7 @@ public class Kurs implements Serializable {
 	}
 	
 	/**
-	 * @return teilnehmerAnzahl gibt die max. Teilnehmer Anzahl zurück
+	 * @return teilnehmerAnzahl gibt die max. Teilnehmer Anzahl zurï¿½ck
 	 */
 	public int getTeilnehmerAnzahl() {
 		return teilnehmerAnzahl;
@@ -124,6 +145,26 @@ public class Kurs implements Serializable {
 
 	public void setKursUhrBis(String uhrBis) {
 		this.uhrBis = uhrBis;
-	}	
-					
+	}
+	
+	public List<String> getTeilnehmer() {
+		return teilnehmer;
+	}
+	
+	public void setTeilnehmer(List<String> teilnehmer) {
+		this.teilnehmer = teilnehmer;
+	}
+	
+	public Map<String, Integer> getBewertung() {
+		return bewertung;
+	}
+	
+	public List<String> getCommentare() {
+		return commentare;
+	}
+
+	@Override
+	public int compareTo(Kurs o) {
+		return this.getKursDatum().compareTo(o.getKursDatum());
+	}
 }
