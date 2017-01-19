@@ -1,5 +1,7 @@
 <%@ page import="dao.*" %>
 <%@ page import="modells.*" %>
+<%@ page import="constants.*" %>
+<%@ page import="management.*" %>
 <jsp:include page="partials/header.jsp" />
 
 <div class="jumbotron">
@@ -13,7 +15,7 @@
     
     <%		
     	NotificationManager notificationManager = (NotificationManager) request.getServletContext().getAttribute(Constants.NOTIFICATION); 
- 		user user = (user)session.getAttribute("user");
+ 		User user = (User)session.getAttribute("user");
     	Notification notification = notificationManager.getNotificationbyUser(user.getBenutzerid());
  		
  		if(notification != null){%>
