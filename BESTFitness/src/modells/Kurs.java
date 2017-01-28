@@ -47,7 +47,21 @@ public class Kurs implements Serializable, Comparable<Kurs> {
 		bewertung = new HashMap<String, Integer>();
 	}
 	
-
+	/**
+	 * SpeicheRt Bewertung eines Kurses
+	 * @return
+	 */
+	public int getRating(){
+		
+		int rating = 0;
+		
+		for(String key : bewertung.keySet()){
+			rating += bewertung.get(key);
+		}
+		
+		return rating;
+	}
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
