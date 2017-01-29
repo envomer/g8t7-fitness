@@ -1,0 +1,109 @@
+<%@page import="Daos.managmentuser"%>
+<%@ page import="Daos.KursManagement" %>
+<%@ page import="raum.*" %>
+<%@ page import="modells.*" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="constants.Constants" %>
+<%@page import="java.text.SimpleDateFormat"%>
+
+<jsp:include page="partials/header.jsp" />
+<p align='center'>
+<table class="table" width='100%' border="2" id="kurs">
+	<tr>	
+		<th>Kurs Name </th>
+		<th>Datum</th>
+		<th>Trainer name</th>
+		<th>Max Teilnehmer</th>
+		<th>Teilnehmer</th>
+		<th>Raum Nr</th>
+		<th>Anzeigen </th>
+		<th>Kommentare</th>
+		<th>Absagen</th>
+	</tr>
+
+<%
+KursManagement km = (KursManagement)request.getServletContext().getAttribute(Constants.KURSDAO);
+ArrayList<Kurs> kurse = km.getKursList();
+Collections.sort(kurse);
+Collections.reverse(kurse);
+SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+
+for (int i = 0; i < kurse.size(); i++) { 
+	String uhrzeit = kurse.get(i).getKursUhrVon(); 
+	uhrzeit += " - ";
+	uhrzeit += kurse.get(i).getKursUhrBis();
+%>
+
+<tr>
+<td align="right"> <%= kurse.get(i).getKursName() %> </td>
+<td align="right"> <%=sdf.format(kurse.get(i).getKursDatum()) %> <%= uhrzeit %> </td>
+<td align="right"> <%= kurse.get(i).getKursTrainer() %> </td>
+<td align="right"> <%= kurse.get(i).getTeilnehmerAnzahl() %></td>
+<td align="right"> <%= kurse.get(i).getTeilnehmer().size() %></td>
+<td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
+<td align="right">
+	<form action="kurse" method="POST">
+		<input type="hidden" name="action" value="comments"></input>
+		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="submit" class="btn btn-default btn-sm" value="Komentare"/>
+	</form>
+</td>
+<td align="right">
+	<form action="kurse" method="POST">
+		<input type="hidden" name="action" value="anzeigen"></input>
+		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
+	</form>
+</td>
+<td align="right">
+	<form action="kurse" method="POST">
+		<input type="hidden" name="action" value="loschen"></input>
+		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="submit" class="btn btn-default btn-sm" value="Absagen"/>
+	</form>
+</td>
+</tr>
+<%	
+}
+%>
+</table>
+<% if(request.getAttribute("teilnehmer") != null){%>
+<div>
+<table class="table" width='100%' border="2" id="kurs">
+	<tr>	
+		<th>Benutzername</th>
+	</tr>
+	
+	<% 
+	Kurs teilnehmer = (Kurs)request.getAttribute("teilnehmer");
+	for (int i = 0; i < teilnehmer.getTeilnehmer().size(); i++) { 	
+	%><tr>
+		<td align="right"> <%= teilnehmer.getTeilnehmer().get(i) %> </td>
+		</tr>
+	<%} %>
+	</table>
+</div>
+
+<%}%>
+
+<% if(request.getAttribute("comments") != null){%>
+<div>
+<table class="table" width='100%' border="2" id="kurs">
+	<tr>	
+		<th>Comments</th>
+	</tr>
+	
+	<% 
+	Kurs comments = (Kurs)request.getAttribute("comments");
+	for (int i = 0; i < comments.getCommentare().size(); i++) { 	
+	%><tr>
+		<td align="right"> <%= comments.getCommentare().get(i) %> </td>
+		</tr>
+	<%} %>
+	</table>
+</div>
+
+<%}%>
+<jsp:include page="partials/footer.jsp" />
