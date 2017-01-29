@@ -31,7 +31,7 @@
     <tr>
       <td align="right">Datum:</td>
       <td>
-        <input maxlength="50" name="datum" size="45" type="date" value="01.01.2017" required/> 
+        <input maxlength="10" name="datum" size="45" type="date" value="01.01.2017" required/> 
       </td>
     </tr>  
     <tr>
@@ -47,7 +47,7 @@
       <select name="raum">
       	<%
       		for(Raum raum : raumList){
-      			out.print("<option>" + raum.getRaumNr() + "</option>");
+      			out.print("<option>" + raum.getName() + "</option>");
       		}
       	%>
       </select>
@@ -84,7 +84,7 @@
 		<th>Trainer name</th>
 		<th>Max Teilnehmer</th>
 		<th>Teilnehmer Anzahl</th>
-		<th>Raum Nr</th>
+		<th>Raum Name</th>
 		<th>Teilnehmer </th>
 		<th>Kommentare</th>
 		<th>Bearbeiten</th>

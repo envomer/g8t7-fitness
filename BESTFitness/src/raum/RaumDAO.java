@@ -33,4 +33,12 @@ public interface RaumDAO
      * Räume speichern
      */
     public void saveRaeume();
+    
+    
+    /**
+     * Raum durch raumNr holen
+     * @param raumName
+     * @return
+     */
+	public Raum getByRaumName(String raumName);
 }

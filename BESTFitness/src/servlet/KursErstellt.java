@@ -81,7 +81,8 @@ public class KursErstellt extends HttpServlet {
 	    String uhrBis = request.getParameter("timebis");
 		String raum = request.getParameter("raum");
 		String trainer = request.getParameter("trainer");
-		int maxKap = raumDao.getByRaumNr(Integer.parseInt(raum)).getKapazitaet();
+		//int maxKap = raumDao.getByRaumNr(Integer.parseInt(raum)).getKapazitaet();
+		int maxKap = raumDao.getByRaumName(raum).getKapazitaet();
 		
 		KursManagement km = (KursManagement) request.getServletContext().getAttribute(Constants.KURSDAO);
 		

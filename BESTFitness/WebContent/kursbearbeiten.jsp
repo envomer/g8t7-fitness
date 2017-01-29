@@ -52,7 +52,7 @@
       <select name="raum">
       	<%
       		for(Raum raum : raumList){
-      			out.print("<option>" + raum.getRaumNr() + "</option>");
+      			out.print("<option>" + raum.getName() + "</option>");
       		}
       	%>
       </select>

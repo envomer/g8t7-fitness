@@ -13,13 +13,13 @@
 <table class="table" width='100%' border="2" id="kurs">
 	<tr>	
 		<th>Kurs Name </th>
-		<th>Datum</th>
+		<th>Datum </th>
 		<th>Trainer name</th>
 		<th>Max Teilnehmer</th>
-		<th>Teilnehmer</th>
-		<th>Raum Nr</th>
-		<th>Anzeigen </th>
+		<th>Teilnehmer Anzahl</th>
+		<th>Raum Name</th>
 		<th>Kommentare</th>
+		<th>Teilnehmer </th>
 		<th>Absagen</th>
 	</tr>
 
@@ -47,7 +47,7 @@ for (int i = 0; i < kurse.size(); i++) {
 	<form action="kurse" method="POST">
 		<input type="hidden" name="action" value="comments"></input>
 		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
-		<input type="submit" class="btn btn-default btn-sm" value="Komentare"/>
+		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
 	</form>
 </td>
 <td align="right">

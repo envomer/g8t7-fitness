@@ -69,6 +69,24 @@ public class RaumManagement implements RaumDAO
 
         return null;
     }
+    
+    /**
+     * Get raum 
+     * @param raumName
+     * @return
+     */
+    @Override
+	public Raum getByRaumName(String raumName) {
+    	Raum r1 = null;
+    	for (Raum r : this.raeume) {
+            if (raumName == r.getName()) {
+                return r;
+            }
+            else r1 = r;
+        }
+
+        return r1;
+	}
 
     /**
      * Alle raume bekommen
@@ -106,4 +124,6 @@ public class RaumManagement implements RaumDAO
             e.printStackTrace();
         }
     }
+
+	
 }
