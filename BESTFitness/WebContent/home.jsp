@@ -1,4 +1,6 @@
 <%@ page import="modells.*" %>
+<%@ page import="Daos.*" %>
+<%@ page import="constants.*" %>
 
 <div class="jumbotron">
     <h1>Willkommen zu BESTFitness!</h1>
