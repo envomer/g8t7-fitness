@@ -31,6 +31,7 @@ public class RaumManagement implements RaumDAO
      * @param raum
      * @return
      */
+    @Override
     public void addRaum(Raum raum) {
         this.raeume.add(raum);
         this.saveRaeume();
@@ -40,6 +41,7 @@ public class RaumManagement implements RaumDAO
      * Raum löschen
      * @param raum
      */
+    @Override
     public void removeRaum(Raum raum) {
         for (Raum r : this.raeume) {
             if (raum.getRaumNr() == r.getRaumNr()) {
@@ -57,6 +59,7 @@ public class RaumManagement implements RaumDAO
      * @param raumNr
      * @return
      */
+    @Override
     public Raum getByRaumNr(int raumNr) {
         for (Raum r : this.raeume) {
             if (raumNr == r.getRaumNr()) {
@@ -71,6 +74,7 @@ public class RaumManagement implements RaumDAO
      * Alle raume bekommen
      * @return
      */
+    @Override
     public ArrayList<Raum> getRaumList() {
         return this.raeume;
     }
