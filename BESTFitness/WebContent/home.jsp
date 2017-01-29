@@ -1,6 +1,8 @@
-<%@ page import="modells.*" %>
 <%@ page import="Daos.*" %>
+<%@ page import="raum.*" %>
+<%@ page import="modells.*" %>
 <%@ page import="constants.*" %>
+<jsp:include page="partials/header.jsp" />
 
 <div class="jumbotron">
     <h1>Willkommen zu BESTFitness!</h1>
@@ -28,3 +30,5 @@
     }%>
     
 </div>
+
+<jsp:include page="partials/footer.jsp" />
