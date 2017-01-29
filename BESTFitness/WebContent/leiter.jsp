@@ -83,12 +83,12 @@
 		<th>Datum </th>
 		<th>Trainer name</th>
 		<th>Max Teilnehmer</th>
-		<th>Teilnehmer</th>
+		<th>Teilnehmer Anzahl</th>
 		<th>Raum Nr</th>
-		<th>Anzeigen </th>
-		<th>Andern</th>
+		<th>Teilnehmer </th>
 		<th>Kommentare</th>
-		<th>Loeschen</th>
+		<th>Bearbeiten</th>
+		<th>Löschen</th>
 	</tr>
 
 <%
@@ -121,20 +121,20 @@ for (int i = 0; i < kurse.size(); i++) {
 	<form action="kurse" method="POST">
 		<input type="hidden" name="action" value="comments"></input>
 		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
-		<input type="submit" class="btn btn-default btn-sm" value="Komentare"/>
+		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
 	</form>
 </td><td align="right">
 	<form action="KursBearbeiten" method="GET">
 		<input type="hidden" name="action" value="andern"></input>
 		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
-		<input type="submit" class="btn btn-default btn-sm" value="Aendern"/>
+		<input type="submit" class="btn btn-default btn-sm" value="Bearbeiten"/>
 	</form>
 </td>
 <td align="right">
 	<form action="kurse" method="POST">
 		<input type="hidden" name="action" value="loschen"></input>
 		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
-		<input type="submit" class="btn btn-default btn-sm" value="Loschen"/>
+		<input type="submit" class="btn btn-default btn-sm" value="Löschen"/>
 	</form>
 </td>
 </tr>
