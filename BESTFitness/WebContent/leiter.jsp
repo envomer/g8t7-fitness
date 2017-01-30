@@ -7,9 +7,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Collections" %>
 <%@ page import="constants.Constants" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+
 <jsp:include page="partials/header.jsp" />
 
-<h3 align="left">Neues Kurs einfuegen/aendern</h3>
+<h3 align="left">Neuen Kurs anlegen/Ã¤ndern</h3>
 
 <%
 	managmentuser userDao = (managmentuser)request.getServletContext().getAttribute(Constants.USERDAO);
@@ -20,6 +24,7 @@
 %>
 
 <form action="KursErstellt" method="POST">
+    <div class="table-responsive">
 <table class="table" id="erstellen" border="0" cellspacing="2" cellpadding="2">
   <tbody>
     <tr>
@@ -73,11 +78,13 @@
     </tr>
   </tbody>
 </table>
+</div>
 </form>
 
 <br>
 <p align='center'>
-<table class="table" width='100%' border="2" id="kurs">
+<div class="table-responsive">
+<table class="table table-bordered" width='100%' id="kurs">
 	<tr>	
 		<th>Kurs Name </th>
 		<th>Datum </th>
@@ -88,7 +95,7 @@
 		<th>Teilnehmer </th>
 		<th>Kommentare</th>
 		<th>Bearbeiten</th>
-		<th>Löschen</th>
+		<th>LÃ¶schen</th>
 	</tr>
 
 <%
@@ -113,28 +120,28 @@ for (int i = 0; i < kurse.size(); i++) {
 <td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
 <td align="right">
 	<form action="kurse" method="POST">
-		<input type="hidden" name="action" value="anzeigen"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="hidden" name="action" value="anzeigen" />
+		<input type="hidden" name="kursid" value="<%=kurse.get(i).getKursID() %>" />
 		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
 	</form>
 </td><td align="right">
 	<form action="kurse" method="POST">
-		<input type="hidden" name="action" value="comments"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="hidden" name="action" value="comments" />
+		<input type="hidden" name="kursid" value="<%=kurse.get(i).getKursID() %>" />
 		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
 	</form>
 </td><td align="right">
 	<form action="KursBearbeiten" method="GET">
-		<input type="hidden" name="action" value="andern"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="hidden" name="action" value="andern" />
+		<input type="hidden" name="kursid" value="<%=kurse.get(i).getKursID() %>" />
 		<input type="submit" class="btn btn-default btn-sm" value="Bearbeiten"/>
 	</form>
 </td>
 <td align="right">
 	<form action="kurse" method="POST">
-		<input type="hidden" name="action" value="loschen"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
-		<input type="submit" class="btn btn-default btn-sm" value="Löschen"/>
+		<input type="hidden" name="action" value="loschen" />
+		<input type="hidden" name="kursid" value="<%=kurse.get(i).getKursID() %>" />
+		<input type="submit" class="btn btn-default btn-sm" value="LÃ¶schen"/>
 	</form>
 </td>
 </tr>
@@ -142,9 +149,10 @@ for (int i = 0; i < kurse.size(); i++) {
 }
 %>
 </table>
+    </div>
 <% if(request.getAttribute("teilnehmer") != null){%>
-<div>
-<table class="table" width='100%' border="2" id="kurs">
+<div class="table-responsive">
+<table class="table table-bordered" width='100%' id="kurs">
 	<tr>	
 		<th>Benutzername</th>
 	</tr>
@@ -162,8 +170,8 @@ for (int i = 0; i < kurse.size(); i++) {
 <%}%>
 
 <% if(request.getAttribute("comments") != null){%>
-<div>
-<table class="table" width='100%' border="2" id="kurs">
+<div class="table-responsive">
+<table class="table table-bordered" width='100%' id="kurs">
 	<tr>	
 		<th>Comments</th>
 	</tr>

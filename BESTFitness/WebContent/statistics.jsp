@@ -8,8 +8,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="constants.Constants" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+
 <jsp:include page="partials/header.jsp" />
-<h2>Statistiks</h2>
+
+<h2>Statistiken</h2>
 
 <%
 
@@ -33,10 +38,10 @@
 %>
 
 <div class="row">
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
 			<div class="caption">
-				<h3>Hochst bewertete Kurse</h3>
+				<h3>Höchst bewertete Kurse</h3>
 
 				<ol class="list-group">
 					<% for(String key : hochstBewertete.keySet()){ %>
@@ -48,7 +53,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
 			<div class="caption">
 				<h3>Meist besuchte Kurse</h3>
@@ -63,7 +68,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
 			<div class="caption">
 				<h3>Meist bewertete Kurse</h3>

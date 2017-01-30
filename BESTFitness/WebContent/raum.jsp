@@ -35,28 +35,31 @@
 	RaumManagement raumdao = (RaumManagement) request.getServletContext().getAttribute(Constants.RAUMDAO);
     ArrayList<Raum> raeume = raumdao.getRaumList();
     int anzahl = raeume.size();
-    out.print("Anzahl:" + anzahl);
+//    out.print("Anzahl:" + anzahl);
     if( anzahl > 0 ) {
 %>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nr.</th>
-            <th>Name</th>
-            <th>Kapazitaet</th>
-        </tr>
-    </thead>
-    <tbody>
-    <%
-        for(Raum raum : raeume) {
-            out.print("<tr>");
-            out.print("<td>" + raum.getRaumNr() + "</td>");
-            out.print("<td>" + raum.getName() + "</td>");
-            out.print("<td>" + raum.getKapazitaet() + "</td>");
-            out.print("</tr>");
-        }
-    %>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nr.</th>
+                <th>Name</th>
+                <th>Kapazitaet</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%
+            for(Raum raum : raeume) {
+                out.print("<tr>");
+                out.print("<td>" + raum.getRaumNr() + "</td>");
+                out.print("<td>" + raum.getName() + "</td>");
+                out.print("<td>" + raum.getKapazitaet() + "</td>");
+                out.print("</tr>");
+            }
+        %>
+        </tbody>
+    </table>
+</div>
 <% } %>
 <jsp:include page="partials/footer.jsp" />

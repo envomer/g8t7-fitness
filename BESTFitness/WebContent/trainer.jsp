@@ -10,7 +10,8 @@
 
 <jsp:include page="partials/header.jsp" />
 <p align='center'>
-<table class="table" width='100%' border="2" id="kurs">
+<div class="table-responsive">
+    <table width='100%' id="kurs" class="table table-bordered">
 	<tr>	
 		<th>Kurs Name </th>
 		<th>Datum </th>
@@ -45,22 +46,22 @@ for (int i = 0; i < kurse.size(); i++) {
 <td align="right"> <%= kurse.get(i).getKursRaum() %> </td>
 <td align="right">
 	<form action="kurse" method="POST">
-		<input type="hidden" name="action" value="comments"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="hidden" name="action" value="comments" />
+		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %> />
 		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
 	</form>
 </td>
 <td align="right">
 	<form action="kurse" method="POST">
-		<input type="hidden" name="action" value="anzeigen"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="hidden" name="action" value="anzeigen" />
+		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %> />
 		<input type="submit" class="btn btn-default btn-sm" value="Anzeigen"/>
 	</form>
 </td>
 <td align="right">
 	<form action="kurse" method="POST">
-		<input type="hidden" name="action" value="loschen"></input>
-		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %>></input>
+		<input type="hidden" name="action" value="loschen" />
+		<input type="hidden" name="kursid" value=<%=kurse.get(i).getKursID() %> />
 		<input type="submit" class="btn btn-default btn-sm" value="Absagen"/>
 	</form>
 </td>
@@ -69,9 +70,12 @@ for (int i = 0; i < kurse.size(); i++) {
 }
 %>
 </table>
+</div>
+
+
 <% if(request.getAttribute("teilnehmer") != null){%>
-<div>
-<table class="table" width='100%' border="2" id="kurs">
+<div class="table-responsive">
+<table class="table table-bordered" width='100%' border="2" id="kurs">
 	<tr>	
 		<th>Benutzername</th>
 	</tr>
@@ -89,8 +93,8 @@ for (int i = 0; i < kurse.size(); i++) {
 <%}%>
 
 <% if(request.getAttribute("comments") != null){%>
-<div>
-<table class="table" width='100%' border="2" id="kurs">
+<div class="table-responsive">
+<table class="table table-bordered" width='100%' border="2" id="kurs">
 	<tr>	
 		<th>Comments</th>
 	</tr>

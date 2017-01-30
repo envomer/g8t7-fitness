@@ -18,9 +18,7 @@ public class raumservlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
         try {
-        	
             RaumManagement raeume = (RaumManagement) request.getServletContext().getAttribute(Constants.RAUMDAO);
-
             request.setAttribute("raeume", raeume.getRaumList());
         }
         catch (Exception e) {

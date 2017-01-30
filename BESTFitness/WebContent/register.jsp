@@ -1,56 +1,44 @@
 <jsp:include page="partials/header.jsp" />
 <h3>Benutzer Registrierung:</h3>
+<%
+    String benid = (String)request.getAttribute("erfolg");
+    if(benid!=null){
+        out.println("Benutzer mit id: "+ benid +" wurde Erfolgreich registriert.");
+    }
+%>
 
 <form action="register" method="POST">
+    <div class="form-group">
+        <label for="inputId">Benutzer ID</label>
+        <input type="number" class="form-control" id="inputId" name="id" placeholder="Benutzer ID">
+    </div>
+    <div class="form-group">
+        <label for="inputLastname">Nachname</label>
+        <input type="text" class="form-control" id="inputLastname" name="nachname" placeholder="Nachname">
+    </div>
+    <div class="form-group">
+        <label for="inputFirstname">Vorname</label>
+        <input type="text" class="form-control" id="inputFirstname" name="vorname" placeholder="Vorname">
+    </div>
+    <div class="form-group">
+        <label for="inputType">Vorname</label>
+        <select id="inputType" name="typ" class="form-control">
+            <option value="kunde.jsp">Kunde</option>
+            <option value="trainer.jsp">Trainer</option>
+            <option value="leiter.jsp">Leiter</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="inputAddresse">Addresse</label>
+        <input type="text" class="form-control" id="inputAddresse" name="addresse" placeholder="Addresse">
+    </div>
+    <div class="form-group">
+        <label for="inputAddresse">Kennwort</label>
+        <input type="password" class="form-control" id="inputKennwort" name="pass" placeholder="Kennwort">
+    </div>
 
-	<%String benid = (String)request.getAttribute("erfolg"); 
-                                if(benid!=null){
-                                	out.println("Benutzer mit id: "+ benid +" wurde Erfolgreich registriert.");
-                                }  %>
-
-
-	<table id="erstellenB" cellspacing="2" cellpadding="2">
-		<tbody>
-			<tr>
-				<td align="right">Benutzer ID</td>
-				<td><input maxlength="50" name="id" size="45" type="text" required/></td>
-			</tr>
-
-			<tr>
-				<td align="right">Nachname:</td>
-				<td><input maxlength="50" name="nachname" size="45" type="text" />
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Vorname:</td>
-				<td><input maxlength="50" name="vorname" size="45" type="text" />
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Typ:</td>
-				<td><select name="typ" align="right" required>
-						<option value="kunde.jsp">Kunde</option>
-						<option value="trainer.jsp">Trainer</option>
-						<option value="leiter.jsp">Leiter</option>
-						</select></td>
-			</tr>
-			<tr>
-				<td align="right">Adresse:</td>
-				<td><input maxlength="50" name="addresse" size="45" type="text" />
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Kennwort:</td>
-				<td><input maxlength="50" name="pass" size="45" type="password" required/>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Register" name="action" /> <input
-					type="submit" value="Zurueck" name="action" /></td>
-			</tr>
-		</tbody>
-	</table>
+    <button type="submit" value="Register" name="action" class="btn btn-primary">Registrieren</button>
 </form>
+
 
 <jsp:include page="partials/footer.jsp" />

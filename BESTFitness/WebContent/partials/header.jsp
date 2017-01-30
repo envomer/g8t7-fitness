@@ -6,21 +6,21 @@
     <title>BESTFitness</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        table.table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+        /*table.table {*/
+            /*font-family: arial, sans-serif;*/
+            /*border-collapse: collapse;*/
+            /*width: 100%;*/
+        /*}*/
 
-        .table td, .table th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+        /*.table td, .table th {*/
+            /*border: 1px solid #dddddd;*/
+            /*text-align: left;*/
+            /*padding: 8px;*/
+        /*}*/
 
-        .table tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+        /*.table tr:nth-child(even) {*/
+            /*!*background-color: #dddddd;*!*/
+        /*}*/
 
         div.transbox {
             width: 400px;
@@ -48,8 +48,10 @@
             user usr = (user)session.getAttribute("user");
         %>
         <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="home.jsp">BESTFitness</a>
+            </div>
             <ul class="nav navbar-nav">
-                <li><a href="home.jsp">Homepage</a></li>
             <%
                 if( usr != null ) {
                     out.println("<li><a href='raum.jsp'>Räume</a></li>");
