@@ -28,6 +28,7 @@ public class register extends HttpServlet {
 	}
 
 	/**
+	 * Die doPost Funktiuon ruft die register.jsp auf
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,6 +36,7 @@ public class register extends HttpServlet {
 	}
 
 	/**
+	 * Die doPost Funktiuon verarbeitet neue Registreiungen und das löschen von vorhandenen Daten
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
