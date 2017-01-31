@@ -12,6 +12,9 @@ public class statistics {
 
 	public statistics(){}
 	
+	/**
+	 * topRatedCourse
+	 */
 	public void topRatedCourse(){
 		//TODO: 1. Top bewerteste Kurse
 		KursManagement kurse = new KursManagement("kurs.txt");
@@ -21,6 +24,10 @@ public class statistics {
 		}
 	}
 	
+	/**
+	 * currentlyCourses
+	 * @return
+	 */
 	public int currentlyCourses(){
 		//TODO: 2. Aktuelle Kurse
 		KursManagement kurse = new KursManagement("kurs.txt");
@@ -28,6 +35,9 @@ public class statistics {
 		return anzahl;
 	}
 	
+	/**
+	 * completedCourses
+	 */
 	public void completedCourses(){
 		//TODO: 3. Abgeschlossene Kurse
 		KursManagement kurse = new KursManagement("completed.txt");
@@ -40,18 +50,30 @@ public class statistics {
 		}	
 	}
 	
+	/**
+	 * mostVisitedCourses
+	 */
 	public void mostVisitedCourses(){
 		//TODO: 4. Meistbesuchte Kurse
 	}
 	
+	/**
+	 * mostVisitedTrainers
+	 */
 	public void mostVisitedTrainers(){
 		//TODO: 5. Meistbesuchte Trainer (LeiterView)
 	}
 	
+	/**
+	 * courseMembers
+	 */
 	public void courseMembers(){
 		//TODO: 6. Aktuelle Kurse Kurse mit Teilnehmer (TrainerView)
 	}
 	
+	/**
+	 * completedCoursesMembers
+	 */
 	public void completedCoursesMembers(){
 		//TODO: 7. Abgeschlossene Kurse mit Teilnehmer (TrainerView)
 	}
