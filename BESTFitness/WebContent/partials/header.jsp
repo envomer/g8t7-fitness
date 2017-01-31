@@ -6,22 +6,6 @@
     <title>BESTFitness</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        /*table.table {*/
-            /*font-family: arial, sans-serif;*/
-            /*border-collapse: collapse;*/
-            /*width: 100%;*/
-        /*}*/
-
-        /*.table td, .table th {*/
-            /*border: 1px solid #dddddd;*/
-            /*text-align: left;*/
-            /*padding: 8px;*/
-        /*}*/
-
-        /*.table tr:nth-child(even) {*/
-            /*!*background-color: #dddddd;*!*/
-        /*}*/
-
         div.transbox {
             width: 400px;
             height: 220px;
@@ -39,6 +23,9 @@
             margin: 5%;
             font-weight: bold;
             color: #000000;
+        }
+        #logged-in-user {
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -66,9 +53,12 @@
             %>
             </ul>
 
+            <div class="navbar-right" id="logged-in-user">
             <%
                 if( usr != null ) {
-                    out.println("<p class=\"navbar-text\">[Angemeldet als " + usr.getName() + " | <b>" + usr.getBenutzertypeClean() + "</b>]</p>");
+                    out.println("<p class=\"navbar-text\">Angemeldet als " + usr.getName() + " | <b>" + usr.getBenutzertypeClean() + "</b></p>");
                 }
             %>
+            </div>
+
         </nav>
