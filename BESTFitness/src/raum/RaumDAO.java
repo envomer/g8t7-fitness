@@ -27,7 +27,7 @@ public interface RaumDAO
      * Raum löschen
      * @param raum
      */
-    public void removeRaum(Raum raum);
+    public boolean removeRaum(Raum raum);
 
     /**
      * Räume speichern

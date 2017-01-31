@@ -13,7 +13,7 @@
     user usr = (user)session.getAttribute("user");
     Boolean isLeiter = false;
     if( usr != null ) {
-        isLeiter = usr.getBenutzertyp() == "leiter.jsp";
+        isLeiter = usr.getBenutzertyp().equals("leiter.jsp");
     }
 %>
 <% if(usr != null && usr.getBenutzertyp().equals("leiter.jsp")) { %>
@@ -63,11 +63,13 @@
                 out.print("<td>" + raum.getKapazitaet() + "</td>");
                 if(isLeiter) {
                 %>
-
-        <form action="raum">
-            <input type="hidden" name="raum" value="<% out.print(raum.getRaumNr()); %>">
-            <button class="btn btn-danger" name="action" value="delete">Löschen</button>
-        </form>
+        <td>
+            <form action="raumservlet" method="POST">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="raum" value="<% out.print(raum.getRaumNr()); %>">
+                <button class="btn btn-danger" name="action" value="delete">Löschen</button>
+            </form>
+        </td>
         <%
                 }
                 out.print("</tr>");

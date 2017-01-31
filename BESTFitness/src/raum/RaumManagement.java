@@ -8,6 +8,11 @@ public class RaumManagement implements RaumDAO
     private String Pfad;
     private ArrayList<Raum> raeume;
 
+    /**
+     * Raum management mit mit gegebenen pfad initialisieren.
+     * Die daten laden falls es File schon gibt, ansonsten File erstellen und daten speichern.
+     * @param pfad
+     */
     public RaumManagement(String pfad)
     {
         this.Pfad = pfad;
@@ -42,12 +47,12 @@ public class RaumManagement implements RaumDAO
      * @param raum
      */
     @Override
-    public void removeRaum(Raum raum) {
+    public boolean removeRaum(Raum raum) {
         for (Raum r : this.raeume) {
             if (raum.getRaumNr() == r.getRaumNr()) {
                 this.raeume.remove(r);
                 this.saveRaeume();
-                break;
+                return true;
             }
         }
 
@@ -112,6 +117,9 @@ public class RaumManagement implements RaumDAO
         }
     }
 
+    /**
+     * Daten laden
+     */
     public void loadList()
     {
         try {

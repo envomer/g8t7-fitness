@@ -15,6 +15,13 @@ import java.io.IOException;
 @WebServlet("/raumservlet")
 public class raumservlet extends HttpServlet
 {
+    /**
+     * Raum ansicht
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
         try {
@@ -30,20 +37,33 @@ public class raumservlet extends HttpServlet
     }
 
 
+    /**
+     * Raum erstellen/loeschen
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     	RaumManagement raeume = (RaumManagement) request.getServletContext().getAttribute(Constants.RAUMDAO);
-        
-        int raumnr = raeume.getRaumList().size() + 1;
-        String name = request.getParameter("name");
-        int kapazitaet = Integer.parseInt(request.getParameter("kapazitaet"));
+        String action = request.getParameter("action");
 
-        if( name == "" ) {
-        	name = "N/A";
+        if(action.equals("delete")) {
+            Raum raum = raeume.getByRaumNr(Integer.parseInt(request.getParameter("raum")));
+            raeume.removeRaum(raum);
         }
+        else {
+            int raumnr = raeume.getRaumList().size() + 1;
+            String name = request.getParameter("name");
+            int kapazitaet = Integer.parseInt(request.getParameter("kapazitaet"));
 
-        Raum raum = new Raum(raumnr, name, kapazitaet);
-        raeume.addRaum(raum);
+            if( name == "" ) {
+                name = "N/A";
+            }
+
+            Raum raum = new Raum(raumnr, name, kapazitaet);
+            raeume.addRaum(raum);
+        }
         response.sendRedirect("raum.jsp");
     }
 

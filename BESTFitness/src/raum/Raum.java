@@ -9,8 +9,17 @@ public class Raum implements Serializable
     private String name;
     private boolean frei;
 
+    /**
+     * Raum objekt ohne daten erstellen
+     */
     public Raum() {}
 
+    /**
+     * Raum object mit werten erstellen
+     * @param raumNr
+     * @param name
+     * @param kapazitaet
+     */
     public Raum(int raumNr, String name, int kapazitaet) {
         this.raumNr = raumNr;
         this.kapazitaet = kapazitaet;
