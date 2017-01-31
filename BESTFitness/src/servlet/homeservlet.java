@@ -12,6 +12,10 @@ import java.io.IOException;
 @WebServlet("/")
 public class homeservlet extends HttpServlet
 {
+	/**
+	 * Hier wird nur home.jsp angezeigt
+	 * doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         request.getRequestDispatcher("home.jsp").include(request, response);
