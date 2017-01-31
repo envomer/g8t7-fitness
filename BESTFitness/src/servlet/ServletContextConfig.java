@@ -13,11 +13,17 @@ import raum.RaumManagement;
 @WebListener
 public class ServletContextConfig implements ServletContextListener {
 
+	/**
+	 * contextDestroyed
+	 */
 	@Override
 	public void contextDestroyed(ServletContextEvent context) {
 		
 	}
 
+	/**
+	 * Hier werden die Management klassen initializiert, sobald sie initialisiert sind die überall aufrufbar
+	 */
 	@Override
 	public void contextInitialized(ServletContextEvent context) {	
 		context.getServletContext().setAttribute(Constants.KURSDAO, new KursManagement("kurse.txt"));
