@@ -28,6 +28,7 @@ public class loginservlet extends HttpServlet {
     }
 
 	/**
+	 * Die doGet Funktiuon ruft die login.jsp auf
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,6 +36,8 @@ public class loginservlet extends HttpServlet {
 	}
 
 	/**
+	 * Hier wird versucht der Benutzer mit den gegebenen daten einzulogen,
+	 * sobalt dies geling wird eine sassion erstellt
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

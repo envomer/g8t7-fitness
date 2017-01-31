@@ -24,6 +24,7 @@ public class kursservlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
+     * Die doGet Funktiuon ruft die kurse.jsp auf
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,6 +33,7 @@ public class kursservlet extends HttpServlet {
     }
 
     /**
+     * Die doPost Funktion ist für das löschen bearbeiten und kommentieren von kursen zuständig
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
