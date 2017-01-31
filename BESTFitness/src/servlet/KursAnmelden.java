@@ -20,6 +20,7 @@ public class KursAnmelden extends HttpServlet{
 
 	
 	/**
+	 * Hier wird nur login.jsp angezeigt
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,6 +29,8 @@ public class KursAnmelden extends HttpServlet{
 	
 	
 	/**
+	 * Hier wird entwerder ein Benutzer als Teilnehmer eingetragen oder der Kurs bewertet und kommentiert
+	 * Und zu kurs.jsp weitergeleitet
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
