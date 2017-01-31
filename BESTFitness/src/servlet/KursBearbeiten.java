@@ -24,6 +24,7 @@ public class KursBearbeiten extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Hier wird der Kurd mit jeweiligen ID gehold und dem entspechend zum kursbearbeiten.jsp weitergeleitet
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,6 +39,7 @@ public class KursBearbeiten extends HttpServlet {
 	}
 
 	/**
+	 * Kurs erstellt und in die Liste gespeichert
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 * @param name die Name des Kurses
 	 * @param datum das Datum des Kurses
@@ -46,8 +48,6 @@ public class KursBearbeiten extends HttpServlet {
 	 * @param raum die Raum Nummer des Kurses
 	 * @param trainer der Trainer des Kurses
 	 * @param maxKap maximale Teilnehmer Anzahl des Kurses
-	 *            Kurs erstellt und in die Liste gespeichert
-	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
