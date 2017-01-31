@@ -43,9 +43,7 @@ public class raumservlet extends HttpServlet
         }
 
         Raum raum = new Raum(raumnr, name, kapazitaet);
-
         raeume.addRaum(raum);
-
         response.sendRedirect("raum.jsp");
     }
 

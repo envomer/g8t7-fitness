@@ -4,12 +4,16 @@
 <%@ page import="modells.user" %>
 <%@ page import="constants.Constants" %>
 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+
 <jsp:include page="partials/header.jsp" />
 
 <%
     user usr = (user)session.getAttribute("user");
+    Boolean isLeiter = false;
     if( usr != null ) {
-        System.out.println(usr.getBenutzertyp());
+        isLeiter = usr.getBenutzertyp() == "leiter.jsp";
     }
 %>
 <% if(usr != null && usr.getBenutzertyp().equals("leiter.jsp")) { %>
@@ -35,7 +39,6 @@
 	RaumManagement raumdao = (RaumManagement) request.getServletContext().getAttribute(Constants.RAUMDAO);
     ArrayList<Raum> raeume = raumdao.getRaumList();
     int anzahl = raeume.size();
-//    out.print("Anzahl:" + anzahl);
     if( anzahl > 0 ) {
 %>
 
@@ -46,6 +49,9 @@
                 <th>Nr.</th>
                 <th>Name</th>
                 <th>Kapazitaet</th>
+                <% if(isLeiter) { %>
+                <th>Löschen</th>
+                <% } %>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +61,15 @@
                 out.print("<td>" + raum.getRaumNr() + "</td>");
                 out.print("<td>" + raum.getName() + "</td>");
                 out.print("<td>" + raum.getKapazitaet() + "</td>");
+                if(isLeiter) {
+                %>
+
+        <form action="raum">
+            <input type="hidden" name="raum" value="<% out.print(raum.getRaumNr()); %>">
+            <button class="btn btn-danger" name="action" value="delete">Löschen</button>
+        </form>
+        <%
+                }
                 out.print("</tr>");
             }
         %>
