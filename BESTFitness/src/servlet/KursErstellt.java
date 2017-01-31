@@ -32,6 +32,7 @@ public class KursErstellt extends HttpServlet {
     }
 
 	/**
+	 * get/Kurserstellt
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +40,7 @@ public class KursErstellt extends HttpServlet {
 	}
 
 	/**
+	 * Kurs erstellt und in die Liste gespeichert
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 * @param name die Name des Kurses
 	 * @param datum das Datum des Kurses
@@ -47,8 +49,6 @@ public class KursErstellt extends HttpServlet {
 	 * @param raum die Raum Nummer des Kurses
 	 * @param trainer der Trainer des Kurses
 	 * @param maxKap maximale Teilnehmer Anzahl des Kurses
-	 *            Kurs erstellt und in die Liste gespeichert
-	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
