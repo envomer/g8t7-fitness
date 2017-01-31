@@ -23,6 +23,7 @@
             <th>Kurs</th>
             <th>Datum </th>
             <th>Trainer </th>
+            <th>Raum</th>
             <th>Bewertung</th>
             <% if(user != null) { %>
             <th>Bewerten</th>
@@ -38,7 +39,7 @@
 
                 String action = kur.getTeilnehmer().contains(user.getBenutzerid()) ? "Abmelden" : "Anmelden";
 
-                Boolean showBewertung = kur.isExpired();
+                Boolean showBewertung = kur.istAbgelaufen() && kur.isTeilnehmer(user.getBenutzerid()) && ! kur.hatKommentiert(user.getBenutzerid());
         %>
 
         <tr>
@@ -46,6 +47,7 @@
             <td align="right"> <%=sdf.format(kurse.get(i).getKursDatum()) %> <%= uhrzeit %> </td>
             <td align="right"> <%= kur.getKursTrainer() %> </td>
             <td align="right"> <%= kur.getRating() %> </td>
+            <td align="right"> <%= kur.getKursRaum() %> </td>
             <% if(user != null) { %>
             <td align="right">
                 <% if(showBewertung) {%>
@@ -70,11 +72,15 @@
             </td>
             <% } %>
             <td align="right">
+                <% if(!kur.istAbgelaufen()) { %>
                 <form method="post" action="KursAnmelden" class="kurs-signup">
                     <input type="hidden" value="<%=action%>" name="action" />
                     <input type="hidden" name="kurs" value="<%=kur.getKursID()%>" />
                     <input class="btn btn-primary btn-xs" value="<%=action%>" type="submit" />
                 </form>
+                <% } else { %>
+                    Abgelaufen
+                <% } %>
             </td>
         </tr>
         <%

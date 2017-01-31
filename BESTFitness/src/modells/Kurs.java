@@ -172,8 +172,24 @@ public class Kurs implements Serializable, Comparable<Kurs> {
 		return this.getKursDatum().compareTo(o.getKursDatum());
 	}
 
-	public boolean isExpired() {
+    /**
+     * Ueberpruefen ob der Kurs abgelaufen ist.
+     * @return boolean
+     */
+	public boolean istAbgelaufen() {
         Date now = new Date();
-        return this.getKursDatum().compareTo(now) == -1;
+        String[] r = uhrBis.split(":");
+        Date kursDate = this.datum;
+        kursDate.setHours(Integer.parseInt(r[0]));
+        kursDate.setMinutes(Integer.parseInt(r[1]));
+        return kursDate.compareTo(now) == -1;
+    }
+
+    public boolean isTeilnehmer(String benutzerId) {
+        return this.teilnehmer.contains(benutzerId);
+    }
+
+    public boolean hatKommentiert(String bentuzerId) {
+        return bewertung.containsKey(bentuzerId);
     }
 }
