@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -82,9 +83,17 @@ public class KursErstellt extends HttpServlet {
 		
 		KursManagement km = (KursManagement) request.getServletContext().getAttribute(Constants.KURSDAO);
 		
-		Kurs neuerKurs = new Kurs(km.getKursList().size() + 1, name, date, uhrVon, uhrBis, raum, trainer, maxKap);	
-		km.speicherKurs(neuerKurs);
-						
-		response.sendRedirect("kurse.jsp");
+		Kurs neuerKurs = new Kurs(km.getKursList().size() + 1, name, date, uhrVon, uhrBis, raum, trainer, maxKap);
+        if( km.istKursBelegt(neuerKurs) ) {
+            request.setAttribute("kurs", neuerKurs);
+            request.setAttribute("error", "Ein Kurs existiert bereits um diese Zeit.");
+
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/kurse.jsp");
+            dispatcher.forward(request,response);
+        }
+        else {
+            km.speicherKurs(neuerKurs);
+            response.sendRedirect("kurse.jsp");
+        }
 	}
 }

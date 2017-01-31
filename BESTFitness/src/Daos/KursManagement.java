@@ -47,7 +47,7 @@ public class KursManagement implements KursDao{
 	}
 
 	/**
-	 * Liefert KursId wieder
+	 * Liefert Kurs mit einer gewissen ID zurueck
 	 */
 	@Override
 	public Kurs getKursById(int id) {
@@ -122,6 +122,22 @@ public class KursManagement implements KursDao{
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
 	}
+
+    /**
+     * Ueberpruefen ob kurs mit einer gewissen zeit existiert
+     *
+     * @param kurs
+     * @return boolean
+     */
+    public boolean istKursBelegt(Kurs kurs) {
+        for (Kurs k : this.kurse) {
+
+            if (kurs.getKursDatum().equals(k.getKursDatum()) && kurs.getKursUhrVon().equals(k.getKursUhrVon())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

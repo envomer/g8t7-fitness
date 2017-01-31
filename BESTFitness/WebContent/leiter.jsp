@@ -15,6 +15,13 @@
 <h3 align="left">Neuen Kurs anlegen/ändern</h3>
 
 <%
+    String benid = (String)request.getAttribute("error");
+    if(benid!=null){
+        out.println("<div class='alert alert-danger'>"+ benid +"</div>");
+    }
+%>
+
+<%
 	managmentuser userDao = (managmentuser)request.getServletContext().getAttribute(Constants.USERDAO);
 	RaumManagement raumDao = (RaumManagement)request.getServletContext().getAttribute(Constants.RAUMDAO);
 
