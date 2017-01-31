@@ -9,14 +9,14 @@ public interface KursDao {
 
 	/**
 	 * speichert die Datei in ArrayList
-	 * @return ArrayList gibt die ArrayList zurück
+	 * @return ArrayList gibt die ArrayList zurÃ¼ck
 	 */
 	public ArrayList<Kurs> getKursList();
 	
 	/**
-	 * Gibt den Kurs anhand der KursID zurück
+	 * Gibt den Kurs anhand der KursID zurÃ¼ck
 	 * @param 	id	Die ID des gesuchtn Kurses
-	 * @return 	Gibt anhand der ID, ein Kurs-Objekt zurück
+	 * @return 	Gibt anhand der ID, ein Kurs-Objekt zurÃ¼ck
 	 */
 	public Kurs getKursById(int id);
 
@@ -27,13 +27,13 @@ public interface KursDao {
 	public void speicherKurs(Kurs k);
 	
 	/**
-	 * löscht den Kurs falls enthaelt
-	 * @param "k" das Objekt des Kurses die gelöscht werden soll
+	 * lÃ¶scht den Kurs falls enthaelt
+	 * @param "k" das Objekt des Kurses die gelÃ¶scht werden soll
 	 */
 	public void loescheKurs(Kurs k);
 	
 	/**
-	 * Der Kurs mit der ID des Kurs aus der Liste gefunden und gelöscht dann eine neue Kurs einfügen werden soll
+	 * Der Kurs mit der ID des Kurs aus der Liste gefunden und gelÃ¶scht dann eine neue Kurs einfÃ¼gen werden soll
 	 * @param k zu veraendernder Kurs
 	 */
 	public void aenderKurs(Kurs k);
