@@ -14,7 +14,12 @@ public class NotificationManager implements NotificationDao {
 
 	public ArrayList<Notification> notificationList;
 	private String FileName;
-	
+
+	/**
+	 * Hier inizialieren und definieren den Pfad für die Speicherungg der Daten
+	 * Falls Datei nicht existiert wirds erstellt amsonsten speichern
+	 * @param fileName
+	 */
 	public NotificationManager(String fileName) {
 		FileName = fileName;
 		notificationList = new ArrayList<Notification>(); 
@@ -34,11 +39,17 @@ public class NotificationManager implements NotificationDao {
 		}
 	}
 	
+	/**
+	 * Hier wird die NotificationList zurückgeliefert
+	 */
 	@Override
 	public ArrayList<Notification> getNotifications() {
 		return notificationList;
 	}
 
+	/**
+	 * Hier wird die Nortification des jeweiligen Benutzer zurückgeliefert
+	 */
 	@Override
 	public Notification getNotificationbyUser(String user) {
 		for (Notification f : notificationList) {
@@ -50,6 +61,9 @@ public class NotificationManager implements NotificationDao {
 		return null;
 	}
 
+	/**
+	 * Hier wird eine Notification gespeichert und un der Liste gespeichert
+	 */
 	@Override
 	public boolean speicherNotification(Notification fr) {
 		boolean bool = false;
@@ -60,7 +74,10 @@ public class NotificationManager implements NotificationDao {
 		bool = true;
 		return bool;
 	}
-
+	
+	/**
+	 * Hier wird eine bestimmte Notification in der Liste gesucht und dann aus der Liste gelöscht
+	 */
 	@Override
 	public void loescheNotification(Notification fr) {
 		boolean gefunden = false;
@@ -77,6 +94,9 @@ public class NotificationManager implements NotificationDao {
 		
 	}
 	
+	/**
+	 * Hier werden die Notification in der Datenbarnk gespeichert.
+	 */
 	public void dbSpeichern() {
 
 		try {
@@ -92,6 +112,9 @@ public class NotificationManager implements NotificationDao {
 		}
 	}
 
+	/**
+	 * In deiser methode werden Notification aus der Datenbank gelesen
+	 */
 	@SuppressWarnings("unchecked") 
 	public void dbLaden() {
 
