@@ -41,7 +41,7 @@ public class KursAnmelden extends HttpServlet{
 		Kurs kurs = km.getKursById(kursId);
 		
 		if(action.equals("Anmelden")){
-			if(kurs.getTeilnehmer().size() + 1 < kurs.getTeilnehmerAnzahl()){
+			if(kurs.getTeilnehmer().size() + 1 <= kurs.getTeilnehmerAnzahl()){
 				kurs.getTeilnehmer().add(user.getBenutzerid());
 			}
 		}else if(action.equals("rate")){

@@ -22,7 +22,13 @@
 	List<user> trainerList = userDao.getTrainerListe();
 	List<Raum> raumList = raumDao.getRaumList();
 
+    String benid = (String)request.getAttribute("error");
+    if(benid!=null){
+        out.println("<div class='alert alert-danger'>"+ benid +"</div>");
+    }
 %>
+
+
 
 <form action="KursBearbeiten" method="POST">
 <table class="table" id="erstellen" border="0" cellspacing="2" cellpadding="2">

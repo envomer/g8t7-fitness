@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -76,24 +77,35 @@ public class KursBearbeiten extends HttpServlet {
 	    String uhrBis = request.getParameter("timebis");
 		String raum = request.getParameter("raum");
 		String trainer = request.getParameter("trainer");
-		//int maxKap = raumDao.getByRaumNr(Integer.parseInt(raum)).getKapazitaet();
 		int maxKap = raumDao.getByRaumName(raum).getKapazitaet();
 
-		
+
+
 		KursManagement km = (KursManagement) request.getServletContext().getAttribute(Constants.KURSDAO);
-		
+
 		Kurs neuerKurs = km.getKursById(kursId);
-		
+
+
 		neuerKurs.setKursUhrVon(uhrVon);
 		neuerKurs.setKursUhrBis(uhrBis);
 		neuerKurs.setKursName(name);
 		neuerKurs.setKursDatum(date);
-		neuerKurs.setTeilnehmerAnzahl(maxKap);
 		neuerKurs.setKursTrainer(trainer);
 		neuerKurs.setKursRaum(raum);
+		neuerKurs.setTeilnehmerAnzahl(maxKap);
 
-		km.saveKurse();
-		
-		response.sendRedirect("kurse.jsp");
+        if( maxKap < neuerKurs.getTeilnehmer().size() ) {
+            request.setAttribute("kurs", neuerKurs);
+            request.setAttribute("error", "Die Teilnehmer anzahl darf die maximale Kapazitaet des Raumes nicht ueberschreiten.");
+
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/kursbearbeiten.jsp");
+            dispatcher.forward(request,response);
+        }
+        else {
+            km.saveKurse();
+
+            response.sendRedirect("kurse.jsp");
+        }
+
 	}
 }
