@@ -19,6 +19,11 @@ public class managmentuser implements userdao, Serializable {
 	public ArrayList<user> userListe;
 	private String FileName;
 
+	/**
+	 * Hier inizialieren und definieren den Pfad für die Speicherungg der Daten
+	 * Falls Datei nicht existiert wirds erstellt amsonsten speichern
+	 * @param fileName
+	 */
 	public managmentuser(String fileName) {
 		FileName = fileName;
 		userListe = new ArrayList<user>(); 
@@ -38,11 +43,18 @@ public class managmentuser implements userdao, Serializable {
 		}
 	}
 
+	/**
+	 * Userliste wird zurückgeliefert
+	 */
 	@Override
 	public ArrayList<user> getuserList() {
 		return userListe;
 	}
 
+	/**
+	 * In der for-Schleife wird der Benutzer wiedergegeben, wenbn er in der userList existier,
+	 * falls nicht dann wird Null zurueckgeliefert
+	 */
 	@Override
 	public user getuserbyId(String id) {
 
@@ -55,6 +67,10 @@ public class managmentuser implements userdao, Serializable {
 		return null;
 	}
 
+	/**
+	 * Hier wird ueberprueft ob das ID des Benutzers in der userList schon gibt
+	 * um Ueberschneidungen zu vermeiden.
+	 */
 	@Override
 	public boolean speichereuser(user fr) {
 		boolean bool = false;
@@ -71,7 +87,11 @@ public class managmentuser implements userdao, Serializable {
 		return bool;
 	}
 
-
+	/**
+	 * Hier wird in der erst ueberprueft ob es den Benutzer in der userLiust gibt.
+	 * Falls der Benutzer gefunden worden ist wird er in der if-Statment geloescht und die userListe geupdatet.
+	 * Falls es den Benutzer nciht gibt wird die exeption geworfen.
+	 */
 	@Override
 	public void loescheuser(user fr) {
 		boolean gefunden = false;
@@ -87,6 +107,10 @@ public class managmentuser implements userdao, Serializable {
 			throw new IllegalArgumentException("Dieser ID nicht existiert");
 	}
 
+
+	/**
+	 * In dieser Methode wird das FileName erstellt und in den ObjectOutputStream gespeichert
+	 */
 	public void dbSpeichern() {
 
 		try {
@@ -102,6 +126,9 @@ public class managmentuser implements userdao, Serializable {
 		}
 	}
 
+	/**
+	 * in deiser methode wird aus der Datenbank gelesen
+	 */
 	@SuppressWarnings("unchecked") 
 	public void dbLaden() {
 
@@ -120,6 +147,9 @@ public class managmentuser implements userdao, Serializable {
 
 	}
 
+	/**
+	 * Hier wird eine Liste mit alle Trainer zurueckgeliefert
+	 */
 	@Override
 	public List<user> getTrainerListe() {
 		
