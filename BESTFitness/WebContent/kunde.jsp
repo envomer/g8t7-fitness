@@ -37,6 +37,8 @@
                 uhrzeit += kur.getKursUhrBis();
 
                 String action = kur.getTeilnehmer().contains(user.getBenutzerid()) ? "Abmelden" : "Anmelden";
+
+                Boolean showBewertung = kur.isExpired();
         %>
 
         <tr>
@@ -46,26 +48,32 @@
             <td align="right"> <%= kur.getRating() %> </td>
             <% if(user != null) { %>
             <td align="right">
+                <% if(showBewertung) {%>
                 <form method="post" action="KursAnmelden" class="kurs-signup">
                     <input type="hidden" value="rate" name="action">
                     <input type="hidden" name="kurs" value="<%=kur.getKursID()%>">
-                    <input type="text" name="comment">
-                    <select name="rating">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <input value="Bewerten" type="submit">
+                    <div class="form-group">
+                        <select class="form-control" name="rating">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="comment"></textarea>
+                    </div>
+                    <input class="btn btn-default btn-xs" value="Bewerten" type="submit">
                 </form>
+                <% } %>
             </td>
             <% } %>
             <td align="right">
                 <form method="post" action="KursAnmelden" class="kurs-signup">
                     <input type="hidden" value="<%=action%>" name="action" />
                     <input type="hidden" name="kurs" value="<%=kur.getKursID()%>" />
-                    <input value="<%=action%>" type="submit" />
+                    <input class="btn btn-primary btn-xs" value="<%=action%>" type="submit" />
                 </form>
             </td>
         </tr>

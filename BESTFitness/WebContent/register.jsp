@@ -3,7 +3,12 @@
 <%
     String benid = (String)request.getAttribute("erfolg");
     if(benid!=null){
-        out.println("Benutzer mit id: "+ benid +" wurde Erfolgreich registriert.");
+        out.println("<div class='alert alert-success'>Benutzer mit id: "+ benid +" wurde Erfolgreich registriert.</div>");
+    }
+
+    benid = (String)request.getAttribute("error");
+    if(benid!=null){
+        out.println("<div class='alert alert-danger'>Benutzer mit id: "+ benid +" existiert bereits.</div>");
     }
 %>
 

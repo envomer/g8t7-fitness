@@ -51,9 +51,14 @@ public class register extends HttpServlet {
 			String pass=request.getParameter("pass");
 
 			user u = new user(benutzertyp, benutzerid,benutzernachname,benutzervorname,adresse, pass);
-			managuser.speichereuser(u);
+            try {
+                managuser.speichereuser(u);
+			    request.setAttribute("erfolg", benutzerid);
+            }
+            catch(IllegalArgumentException e) {
+                request.setAttribute("error", benutzerid);
+            }
 
-			request.setAttribute("erfolg", benutzerid);
 			RequestDispatcher dispa = request.getRequestDispatcher("register.jsp");
 			dispa.forward(request, response);
 		}

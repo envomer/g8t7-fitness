@@ -171,4 +171,9 @@ public class Kurs implements Serializable, Comparable<Kurs> {
 	public int compareTo(Kurs o) {
 		return this.getKursDatum().compareTo(o.getKursDatum());
 	}
+
+	public boolean isExpired() {
+        Date now = new Date();
+        return this.getKursDatum().compareTo(now) == -1;
+    }
 }
