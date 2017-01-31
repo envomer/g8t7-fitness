@@ -1,6 +1,10 @@
 package modells;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import Daos.KursManagement;
@@ -77,5 +81,26 @@ public class statistics {
 	public void completedCoursesMembers(){
 		//TODO: 7. Abgeschlossene Kurse mit Teilnehmer (TrainerView)
 	}
+
+	public Date parseDate(String datum) {
+        DateFormat df = null;
+        if(datum.contains(".")){
+            df = new SimpleDateFormat("dd.MM.yyyy");
+        }else if(datum.contains("-")){
+            df = new SimpleDateFormat("yyyy-MM-dd");
+        }else {
+            df = new SimpleDateFormat("dd/MM/yyyy");
+        }
+
+        Date date = null;
+
+        try {
+            date = df.parse(datum);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return date;
+    }
 
 }
