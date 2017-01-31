@@ -37,11 +37,18 @@ public class KursManagement implements KursDao{
         }
     }
     
+    
+    /**
+     * Gibt Kursliste wider
+     */
 	@Override
 	public ArrayList<Kurs> getKursList() {
 		return this.kurse;
 	}
 
+	/**
+	 * Liefert KursId wieder
+	 */
 	@Override
 	public Kurs getKursById(int id) {
 		for (Kurs k : this.kurse) {
@@ -53,12 +60,18 @@ public class KursManagement implements KursDao{
         return null;
 	}
 
+	/**
+	 * Fuegt einen Kurs hinzu und speichert
+	 */
 	@Override
 	public void speicherKurs(Kurs k) {
 		this.kurse.add(k);
         this.saveKurse();
 	}
 
+	/**
+	 * Schaut in der for-schleife wo sich der kuurs mit selben id befindet und loescht es in den if-statment 
+	 */
 	@Override
 	public void loescheKurs(Kurs k) {
 		for (Kurs r : this.kurse) {
@@ -70,12 +83,18 @@ public class KursManagement implements KursDao{
         }
 	}
 
+	/**
+	 * Um Kurs zu veraendern wird hier der Kurs erst gelöscht und dann wieder gespeichert 
+	 */
 	@Override
 	public void aenderKurs(Kurs k) {
 		this.loescheKurs(k);
 		this.speicherKurs(k);
 	}
 	
+	/**
+	 * Hier wird die Liste aller Kurse gespeichert
+	 */
 	public void saveKurse() {
         try {
             FileOutputStream fos = new FileOutputStream(this.pfad);
@@ -88,6 +107,9 @@ public class KursManagement implements KursDao{
         }
     }
 	
+	/**
+	 * Hier wird die Liste aller Kurse von der Datenbank geladen
+	 */
 	@SuppressWarnings("unchecked")
 	public void dbLaden() {
 
