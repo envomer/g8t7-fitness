@@ -56,7 +56,6 @@ public class register extends HttpServlet {
 			request.setAttribute("erfolg", benutzerid);
 			RequestDispatcher dispa = request.getRequestDispatcher("register.jsp");
 			dispa.forward(request, response);
-						
 		}
 		else if(action.equals("Loeschen")){
 

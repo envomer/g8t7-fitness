@@ -17,7 +17,6 @@ public class user implements Serializable{
 
 
 	public user(String benutzertyp, String benutzerid, String benutzernachname, String benutzervorname, String addresse, String pass) {
-		
 		this.benutzertyp = benutzertyp;
 		this.benutzerid=benutzerid;
 		this.benutzernachname = benutzernachname;

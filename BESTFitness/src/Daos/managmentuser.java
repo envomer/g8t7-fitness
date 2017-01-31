@@ -58,9 +58,11 @@ public class managmentuser implements userdao, Serializable {
 	@Override
 	public boolean speichereuser(user fr) {
 		boolean bool = false;
-		for (int a = 0;a < userListe.size(); a++ )
-			if (userListe.get(a).getBenutzerid() == fr.getBenutzerid())
-				throw new IllegalArgumentException("Dieser ID existiert schon ");
+		for (int a = 0;a < userListe.size(); a++ ) {
+            if (userListe.get(a).getBenutzerid().equals(fr.getBenutzerid())) {
+                throw new IllegalArgumentException("Dieser ID existiert schon ");
+            }
+        }
 
 		userListe.add(fr);
 
