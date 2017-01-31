@@ -48,7 +48,7 @@ public class raumservlet extends HttpServlet
     	RaumManagement raeume = (RaumManagement) request.getServletContext().getAttribute(Constants.RAUMDAO);
         String action = request.getParameter("action");
 
-        if(action.equals("delete")) {
+        if(action != null && action.equals("delete")) {
             Raum raum = raeume.getByRaumNr(Integer.parseInt(request.getParameter("raum")));
             raeume.removeRaum(raum);
         }
