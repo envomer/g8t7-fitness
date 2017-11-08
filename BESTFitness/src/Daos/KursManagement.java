@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 
 import modells.Kurs;
 import modells.user;
@@ -131,9 +132,24 @@ public class KursManagement implements KursDao{
      * @return boolean
      */
     public boolean istKursBelegt(Kurs kurs) {
-        for (Kurs k : this.kurse) {
+        String[] r = kurs.getKursUhrVon().split(":");
+        Date kursStartDate = kurs.getKursDatum();
+        kursStartDate.setHours(Integer.parseInt(r[0]));
+        kursStartDate.setMinutes(Integer.parseInt(r[1]));
 
-            if (kurs.getKursDatum().equals(k.getKursDatum()) && kurs.getKursUhrVon().equals(k.getKursUhrVon())) {
+        r = kurs.getKursUhrBis().split(":");
+        Date kursEndDate = kurs.getKursDatum();
+        kursEndDate.setHours(Integer.parseInt(r[0]));
+        kursEndDate.setMinutes(Integer.parseInt(r[1]));
+
+        for (Kurs k : this.kurse) {
+            Date kDate = k.getKursDatum();
+            String[] d = kurs.getKursUhrVon().split(":");
+            kDate.setHours(Integer.parseInt(d[0]));
+            kDate.setMinutes(Integer.parseInt(d[1]));
+
+            System.out.println(kDate.compareTo(kursStartDate) + " - " + kDate.compareTo(kursEndDate));
+            if (kDate.compareTo(kursStartDate) >= 0 && kDate.compareTo(kursEndDate) <= 0) {
                 return true;
             }
         }
